@@ -1,0 +1,35 @@
+{
+    "$schema": "https://json.schemastore.org/sitemap.json",
+    "urlset": [
+        {
+            "url": "https://maronlabs.com/",
+            "changefreq": "weekly",
+            "priority": 1.0
+        },
+        {
+            "url": "https://maronlabs.com/about",
+            "changefreq": "monthly",
+            "priority": 0.8
+        },
+        {
+            "url": "https://maronlabs.com/services",
+            "changefreq": "monthly",
+            "priority": 0.9
+        },
+        {
+            "url": "https://maronlabs.com/portfolio",
+            "changefreq": "weekly",
+            "priority": 0.8
+        },
+        {
+            "url": "https://maronlabs.com/team",
+            "changefreq": "monthly",
+            "priority": 0.7
+        },
+        {
+            "url": "https://maronlabs.com/contact",
+            "changefreq": "monthly",
+            "priority": 0.8
+        }
+    ]
+}
