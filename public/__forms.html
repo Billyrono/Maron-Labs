@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Detection</title>
+</head>
+<body>
+  <!-- This file is for Netlify Forms detection in Next.js -->
+  <!-- The actual form is rendered by React, this is just for build-time detection -->
+  
+  <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="tel" name="phone" />
+    <select name="service">
+      <option value="">Select a service</option>
+    </select>
+    <textarea name="message"></textarea>
+  </form>
+</body>
+</html>
