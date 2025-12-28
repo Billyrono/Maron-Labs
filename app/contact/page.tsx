@@ -9,6 +9,7 @@ import PageLoader from "@/components/page-loader"
 import { FadeIn } from "@/components/scroll-animations"
 import Image from "next/image"
 import { Phone, Mail, MapPin, Globe, MessageCircle, Send, Clock, CheckCircle } from "lucide-react"
+import { ServiceDropdown } from "@/components/service-dropdown"
 
 export default function ContactPage() {
     const [formData, setFormData] = useState({
@@ -165,21 +166,11 @@ export default function ContactPage() {
                                         </div>
                                         <div>
                                             <label className="block text-sm font-medium text-[#161312] mb-2">Service Interested In</label>
-                                            <select
+                                            <ServiceDropdown
                                                 name="service"
                                                 value={formData.service}
-                                                onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                                                className="w-full px-4 py-3 border border-[#979696]/30 rounded focus:outline-none focus:border-[#cc5500] transition bg-white"
-                                            >
-                                                <option value="">Select a service</option>
-                                                <option value="Web Design & Development">Web Design & Development</option>
-                                                <option value="Graphic Design">Graphic Design</option>
-                                                <option value="Content Creation">Content Creation</option>
-                                                <option value="SEO Optimization">SEO Optimization</option>
-                                                <option value="Mobile App Development">Mobile App Development</option>
-                                                <option value="E-Commerce Solutions">E-Commerce Solutions</option>
-                                                <option value="Other">Other</option>
-                                            </select>
+                                                onChange={(value) => setFormData({ ...formData, service: value })}
+                                            />
                                         </div>
                                         <div>
                                             <label className="block text-sm font-medium text-[#161312] mb-2">Your Message *</label>
@@ -228,7 +219,7 @@ export default function ContactPage() {
                                             </div>
                                             <div>
                                                 <p className="text-sm text-[#979696]">Phone</p>
-                                                <p className="font-bold text-[#000000]">+254 746 537 878</p>
+                                                <p className="font-bold text-[#000000]">+254 700 270 670</p>
                                             </div>
                                         </a>
                                         <a href="mailto:hello@maronlabs.com" className="flex items-center gap-4 p-4 bg-[#ffffff] rounded-lg hover:shadow-lg transition group">

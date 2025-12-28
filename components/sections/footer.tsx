@@ -88,6 +88,11 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/contact" className="hover:text-[#cc5500] transition hover:translate-x-1 inline-block">
+                    Contact
+                  </Link>
+                </li>
+                <li>
                   <Link href="/terms" className="hover:text-[#cc5500] transition hover:translate-x-1 inline-block">
                     Terms of Service
                   </Link>
@@ -95,11 +100,6 @@ export default function Footer() {
                 <li>
                   <Link href="/privacy" className="hover:text-[#cc5500] transition hover:translate-x-1 inline-block">
                     Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="hover:text-[#cc5500] transition hover:translate-x-1 inline-block">
-                    Contact
                   </Link>
                 </li>
               </ul>
@@ -150,7 +150,7 @@ export default function Footer() {
           <div className="border-t border-[#979696]/20 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-[#979696] text-sm">
-                © {new Date().getFullYear()} Maron Labs. All rights reserved. Crafted with precision in Kenya.
+                © {new Date().getFullYear()} Maron Labs. All rights reserved. Crafted with precision.
               </p>
               <div className="flex gap-4">
                 <a

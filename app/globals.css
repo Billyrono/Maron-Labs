@@ -129,11 +129,11 @@
   * {
     @apply border-border outline-ring/50;
   }
-  
+
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
     @apply bg-background text-foreground;
   }
@@ -149,5 +149,22 @@
 
   [style*="--font-league-spartan"] {
     --font-league-spartan: "League Spartan", sans-serif;
+  }
+
+  /* Custom select dropdown styling */
+  select {
+    background-image: none;
+  }
+
+  select option {
+    padding: 12px 16px;
+    background-color: #ffffff;
+    color: #161312;
+  }
+
+  select option:hover,
+  select option:checked {
+    background-color: #fee2b2;
+    color: #161312;
   }
 }
