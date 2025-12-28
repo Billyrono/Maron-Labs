@@ -71,7 +71,7 @@ export default function ServicesPage() {
             <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-[#161312] overflow-hidden min-h-[80vh] flex items-center">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/images/Our Services.avif"
+                        src="/images/our-services.webp"
                         alt="Our Services"
                         fill
                         className="object-cover opacity-30"

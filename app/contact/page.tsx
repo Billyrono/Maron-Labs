@@ -18,14 +18,40 @@ export default function ContactPage() {
         service: "",
         message: ""
     })
+    const [isSubmitting, setIsSubmitting] = useState(false)
+    const [isSuccess, setIsSuccess] = useState(false)
+    const [error, setError] = useState("")
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        // Form submission logic - could integrate with email service
-        const mailtoLink = `mailto:hello@maronlabs.com?subject=Project Inquiry from ${formData.name}&body=${encodeURIComponent(
-            `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService: ${formData.service}\n\nMessage:\n${formData.message}`
-        )}`
-        window.location.href = mailtoLink
+        setIsSubmitting(true)
+        setError("")
+
+        try {
+            // Submit to Netlify Forms
+            const formElement = e.currentTarget
+            const formDataObj = new FormData(formElement)
+
+            const response = await fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formDataObj as unknown as Record<string, string>).toString()
+            })
+
+            if (response.ok) {
+                setIsSuccess(true)
+
+                // Reset form
+                setFormData({ name: "", email: "", phone: "", service: "", message: "" })
+            } else {
+                throw new Error("Form submission failed")
+            }
+        } catch (err) {
+            setError("Something went wrong. Please try again or contact us directly.")
+            console.error("Form submission error:", err)
+        } finally {
+            setIsSubmitting(false)
+        }
     }
 
     return (
@@ -37,7 +63,7 @@ export default function ContactPage() {
             <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-[#161312] overflow-hidden min-h-[80vh] flex items-center">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/images/Alt Contact Image.avif"
+                        src="/images/alt-contact.webp"
                         alt="Contact Us"
                         fill
                         className="object-cover opacity-30"
@@ -67,76 +93,124 @@ export default function ContactPage() {
                                 <h2 className="text-2xl font-bold text-[#000000] mb-6" style={{ fontFamily: "Oswald" }}>
                                     Send Us a Message
                                 </h2>
-                                <form onSubmit={handleSubmit} className="space-y-6">
-                                    <div>
-                                        <label className="block text-sm font-medium text-[#161312] mb-2">Your Name *</label>
-                                        <input
-                                            type="text"
-                                            required
-                                            value={formData.name}
-                                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                            className="w-full px-4 py-3 border border-[#979696]/30 rounded focus:outline-none focus:border-[#cc5500] transition"
-                                            placeholder="John Doe"
-                                        />
-                                    </div>
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                        <div>
-                                            <label className="block text-sm font-medium text-[#161312] mb-2">Email Address *</label>
-                                            <input
-                                                type="email"
-                                                required
-                                                value={formData.email}
-                                                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                                className="w-full px-4 py-3 border border-[#979696]/30 rounded focus:outline-none focus:border-[#cc5500] transition"
-                                                placeholder="john@example.com"
-                                            />
-                                        </div>
-                                        <div>
-                                            <label className="block text-sm font-medium text-[#161312] mb-2">Phone Number</label>
-                                            <input
-                                                type="tel"
-                                                value={formData.phone}
-                                                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                                                className="w-full px-4 py-3 border border-[#979696]/30 rounded focus:outline-none focus:border-[#cc5500] transition"
-                                                placeholder="+254 700 000 000"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <label className="block text-sm font-medium text-[#161312] mb-2">Service Interested In</label>
-                                        <select
-                                            value={formData.service}
-                                            onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                                            className="w-full px-4 py-3 border border-[#979696]/30 rounded focus:outline-none focus:border-[#cc5500] transition bg-white"
+                                {isSuccess ? (
+                                    <div className="text-center py-12">
+                                        <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
+                                        <h3 className="text-2xl font-bold text-[#161312] mb-2">Message Sent!</h3>
+                                        <p className="text-[#979696]">Thank you for reaching out. We'll get back to you soon!</p>
+                                        <button
+                                            onClick={() => setIsSuccess(false)}
+                                            className="mt-6 px-6 py-2 border border-[#cc5500] text-[#cc5500] rounded hover:bg-[#cc5500] hover:text-white transition"
                                         >
-                                            <option value="">Select a service</option>
-                                            <option value="Web Design & Development">Web Design & Development</option>
-                                            <option value="Graphic Design">Graphic Design</option>
-                                            <option value="Content Creation">Content Creation</option>
-                                            <option value="SEO Optimization">SEO Optimization</option>
-                                            <option value="Mobile App Development">Mobile App Development</option>
-                                            <option value="E-Commerce Solutions">E-Commerce Solutions</option>
-                                            <option value="Other">Other</option>
-                                        </select>
+                                            Send Another Message
+                                        </button>
                                     </div>
-                                    <div>
-                                        <label className="block text-sm font-medium text-[#161312] mb-2">Your Message *</label>
-                                        <textarea
-                                            required
-                                            rows={5}
-                                            value={formData.message}
-                                            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                            className="w-full px-4 py-3 border border-[#979696]/30 rounded focus:outline-none focus:border-[#cc5500] transition resize-none"
-                                            placeholder="Tell us about your project..."
-                                        />
-                                    </div>
-                                    <button
-                                        type="submit"
-                                        className="w-full px-8 py-4 bg-[#cc5500] text-[#f9f8f9] rounded font-bold hover:bg-[#a83f00] transition-all flex items-center justify-center gap-2 hover:scale-[1.02]"
+                                ) : (
+                                    <form
+                                        name="contact"
+                                        method="POST"
+                                        data-netlify="true"
+                                        netlify-honeypot="bot-field"
+                                        onSubmit={handleSubmit}
+                                        className="space-y-6"
                                     >
-                                        <Send className="w-5 h-5" /> Send Message
-                                    </button>
-                                </form>
+                                        {/* Hidden fields for Netlify */}
+                                        <input type="hidden" name="form-name" value="contact" />
+                                        <div hidden>
+                                            <input name="bot-field" />
+                                        </div>
+
+                                        {error && (
+                                            <div className="p-4 bg-red-50 border border-red-200 rounded text-red-600 text-sm">
+                                                {error}
+                                            </div>
+                                        )}
+
+                                        <div>
+                                            <label className="block text-sm font-medium text-[#161312] mb-2">Your Name *</label>
+                                            <input
+                                                type="text"
+                                                name="name"
+                                                required
+                                                value={formData.name}
+                                                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                                className="w-full px-4 py-3 border border-[#979696]/30 rounded focus:outline-none focus:border-[#cc5500] transition"
+                                                placeholder="John Doe"
+                                            />
+                                        </div>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div>
+                                                <label className="block text-sm font-medium text-[#161312] mb-2">Email Address *</label>
+                                                <input
+                                                    type="email"
+                                                    name="email"
+                                                    required
+                                                    value={formData.email}
+                                                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                                    className="w-full px-4 py-3 border border-[#979696]/30 rounded focus:outline-none focus:border-[#cc5500] transition"
+                                                    placeholder="john@example.com"
+                                                />
+                                            </div>
+                                            <div>
+                                                <label className="block text-sm font-medium text-[#161312] mb-2">Phone Number</label>
+                                                <input
+                                                    type="tel"
+                                                    name="phone"
+                                                    value={formData.phone}
+                                                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                                                    className="w-full px-4 py-3 border border-[#979696]/30 rounded focus:outline-none focus:border-[#cc5500] transition"
+                                                    placeholder="+254 700 000 000"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-[#161312] mb-2">Service Interested In</label>
+                                            <select
+                                                name="service"
+                                                value={formData.service}
+                                                onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                                                className="w-full px-4 py-3 border border-[#979696]/30 rounded focus:outline-none focus:border-[#cc5500] transition bg-white"
+                                            >
+                                                <option value="">Select a service</option>
+                                                <option value="Web Design & Development">Web Design & Development</option>
+                                                <option value="Graphic Design">Graphic Design</option>
+                                                <option value="Content Creation">Content Creation</option>
+                                                <option value="SEO Optimization">SEO Optimization</option>
+                                                <option value="Mobile App Development">Mobile App Development</option>
+                                                <option value="E-Commerce Solutions">E-Commerce Solutions</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-[#161312] mb-2">Your Message *</label>
+                                            <textarea
+                                                name="message"
+                                                required
+                                                rows={5}
+                                                value={formData.message}
+                                                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                                                className="w-full px-4 py-3 border border-[#979696]/30 rounded focus:outline-none focus:border-[#cc5500] transition resize-none"
+                                                placeholder="Tell us about your project..."
+                                            />
+                                        </div>
+                                        <button
+                                            type="submit"
+                                            disabled={isSubmitting}
+                                            className="w-full px-8 py-4 bg-[#cc5500] text-[#f9f8f9] rounded font-bold hover:bg-[#a83f00] transition-all flex items-center justify-center gap-2 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                                        >
+                                            {isSubmitting ? (
+                                                <>
+                                                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                                                    Sending...
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <Send className="w-5 h-5" /> Send Message
+                                                </>
+                                            )}
+                                        </button>
+                                    </form>
+                                )}
                             </div>
                         </FadeIn>
 

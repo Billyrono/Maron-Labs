@@ -103,6 +103,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Preload carousel images for faster LCP */}
+        <link rel="preload" href="/images/Image 1.svg" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/images/Image 2.svg" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/images/our-services.webp" as="image" type="image/webp" />
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>

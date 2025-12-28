@@ -15,7 +15,7 @@ const carouselImages = [
     alt: "Creative Design"
   },
   {
-    src: "/images/Our Services.avif",
+    src: "/images/our-services.webp",
     alt: "Our Services"
   }
 ]

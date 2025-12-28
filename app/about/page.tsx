@@ -22,7 +22,7 @@ export default function AboutPage() {
             <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-[#161312] overflow-hidden min-h-[80vh] flex items-center">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/images/About us.jpeg"
+                        src="/images/about-hero.webp"
                         alt="About Maron Labs"
                         fill
                         className="object-cover opacity-30"
@@ -78,7 +78,7 @@ export default function AboutPage() {
                             </div>
                             <div className="relative h-[400px] rounded-lg overflow-hidden shadow-2xl">
                                 <Image
-                                    src="/images/Alt About.avif"
+                                    src="/images/alt-about.webp"
                                     alt="Maron Labs Team"
                                     fill
                                     className="object-cover"
