@@ -48,13 +48,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://maronlabs.com",
+    url: "https://maron-labs.netlify.app",
     siteName: "Maron Labs",
     title: "Maron Labs - Premium Digital Solutions Agency",
     description: "Transform your vision into digital excellence. Premium web design, development, and digital marketing solutions in Kenya.",
     images: [
       {
-        url: "https://maronlabs.com/images/og-image.png",
+        url: "https://maron-labs.netlify.app/images/og-image.png",
         width: 1200,
         height: 630,
         alt: "Maron Labs - Digital Solutions Agency",
@@ -65,13 +65,13 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Maron Labs - Premium Digital Solutions Agency",
     description: "Transform your vision into digital excellence. Premium web design and development in Kenya.",
-    images: ["https://maronlabs.com/images/og-image.png"],
+    images: ["https://maron-labs.netlify.app/images/og-image.png"],
   },
   verification: {
     google: "your-google-verification-code",
   },
   alternates: {
-    canonical: "https://maronlabs.com",
+    canonical: "https://maron-labs.netlify.app",
   },
   icons: {
     icon: [

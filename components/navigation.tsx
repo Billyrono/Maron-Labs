@@ -97,7 +97,7 @@ export default function Navigation() {
 
           {/* CTA Button */}
           <a
-            href="https://wa.me/254746537878"
+            href="https://wa.me/254700270670"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden md:block px-6 py-2 bg-[#cc5500] text-[#f9f8f9] rounded font-medium transition-all hover:scale-105 hover:bg-[#a83f00] text-sm"
@@ -171,7 +171,7 @@ export default function Navigation() {
               Contact
             </Link>
             <a
-              href="https://wa.me/254746537878"
+              href="https://wa.me/254700270670"
               target="_blank"
               rel="noopener noreferrer"
               className="block mt-4 px-6 py-3 bg-[#cc5500] text-[#f9f8f9] rounded text-center font-medium hover:bg-[#a83f00] transition"

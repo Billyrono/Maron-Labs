@@ -20,7 +20,7 @@ export default function About() {
             </h2>
             <p className="text-lg text-[#161312] mb-6 leading-relaxed">
               Maron Labs is a leading digital solutions agency dedicated to crafting exceptional online experiences.
-              Established in 2024, we specialize in web design, development, graphic design, SEO, content creation,
+              Established in 2025, we specialize in web design, development, graphic design, SEO, content creation,
               and digital marketing services.
             </p>
             <p className="text-lg text-[#161312] mb-6 leading-relaxed">
@@ -54,7 +54,7 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#000000]/50 to-transparent" />
               <div className="absolute bottom-6 left-6 text-[#f9f8f9]">
                 <p className="text-2xl font-bold">Premium Digital Solutions</p>
-                <p className="text-sm opacity-80">Crafted with precision since 2024</p>
+                <p className="text-sm opacity-80">Crafted with precision since 2025</p>
               </div>
             </div>
           </div>

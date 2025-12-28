@@ -222,7 +222,7 @@ export default function ContactPage() {
                                         Contact Information
                                     </h2>
                                     <div className="space-y-4">
-                                        <a href="tel:+254746537878" className="flex items-center gap-4 p-4 bg-[#ffffff] rounded-lg hover:shadow-lg transition group">
+                                        <a href="tel:+254700270670" className="flex items-center gap-4 p-4 bg-[#ffffff] rounded-lg hover:shadow-lg transition group">
                                             <div className="w-12 h-12 bg-[#cc5500] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                                                 <Phone className="w-5 h-5 text-[#f9f8f9]" />
                                             </div>
@@ -268,7 +268,7 @@ export default function ContactPage() {
                                     <h3 className="text-xl font-bold mb-2">Prefer WhatsApp?</h3>
                                     <p className="opacity-90 mb-4">Get a faster response by messaging us directly on WhatsApp.</p>
                                     <a
-                                        href="https://wa.me/254746537878"
+                                        href="https://wa.me/254700270670"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center gap-2 px-6 py-3 bg-[#ffffff] text-[#25D366] rounded font-bold hover:bg-[#f9f8f9] transition hover:scale-105"

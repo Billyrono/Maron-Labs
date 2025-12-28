@@ -152,20 +152,22 @@ export default function PortfolioPage() {
 
             {/* CTA */}
             <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#161312]">
-                <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl sm:text-4xl font-black text-[#f9f8f9] mb-6" style={{ fontFamily: "Oswald" }}>
-                        Ready to Start Your Project?
-                    </h2>
-                    <p className="text-lg text-[#f9f8f9]/80 mb-8">
-                        Let's create something amazing together. Get in touch to discuss your next digital project.
-                    </p>
-                    <Link
-                        href="/contact"
-                        className="inline-flex items-center gap-2 px-8 py-4 bg-[#cc5500] text-[#f9f8f9] rounded font-bold hover:bg-[#a83f00] transition-all"
-                    >
-                        Get Started
-                    </Link>
-                </div>
+                <FadeIn>
+                    <div className="max-w-4xl mx-auto text-center">
+                        <h2 className="text-3xl sm:text-4xl font-black text-[#f9f8f9] mb-6" style={{ fontFamily: "Oswald" }}>
+                            Ready to Start Your Project?
+                        </h2>
+                        <p className="text-lg text-[#f9f8f9]/80 mb-8">
+                            Let's create something amazing together. Get in touch to discuss your next digital project.
+                        </p>
+                        <Link
+                            href="/contact"
+                            className="inline-flex items-center gap-2 px-8 py-4 bg-[#cc5500] text-[#f9f8f9] rounded font-bold hover:bg-[#a83f00] transition-all hover:scale-105"
+                        >
+                            Get Started
+                        </Link>
+                    </div>
+                </FadeIn>
             </section>
 
             <Footer />

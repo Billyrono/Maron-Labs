@@ -128,7 +128,7 @@ export default function Hero() {
             Start Your Project
           </a>
           <a
-            href="https://wa.me/254746537878"
+            href="https://wa.me/254700270670"
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-4 border-2 border-[#f9f8f9] text-[#f9f8f9] rounded font-bold hover:bg-[#f9f8f9] hover:text-[#161312] transition-all inline-flex items-center justify-center gap-2"
@@ -154,7 +154,7 @@ export default function Hero() {
           </div>
           <div className="text-center">
             <p className="text-3xl sm:text-4xl font-black text-[#cc5500]">
-              <AnimatedCounter end={2024} duration={1500} />
+              <AnimatedCounter end={2025} duration={1500} />
             </p>
             <p className="text-sm text-[#f9f8f9]/70">Established</p>
           </div>

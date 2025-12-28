@@ -36,7 +36,7 @@ export default function CTA() {
               Get Started
             </a>
             <a
-              href="https://wa.me/254746537878"
+              href="https://wa.me/254700270670"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 border-2 border-[#cc5500] text-[#cc5500] rounded font-bold hover:bg-[#cc5500] hover:text-[#f9f8f9] transition text-lg inline-flex items-center justify-center gap-2 hover:scale-105"
@@ -51,14 +51,14 @@ export default function CTA() {
         <div className="pt-12 border-t border-[#979696]/30 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <ScaleIn delay={300}>
             <a
-              href="tel:+254746537878"
+              href="tel:+254700270670"
               className="group block p-6 rounded-lg hover:bg-[#000000]/30 transition"
             >
               <div className="w-12 h-12 bg-[#cc5500] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <Phone className="w-5 h-5 text-[#f9f8f9]" />
               </div>
               <p className="text-[#979696] text-sm mb-1">Phone</p>
-              <p className="text-[#f9f8f9] font-bold">+254 746 537 878</p>
+              <p className="text-[#f9f8f9] font-bold">+254 700 270 670</p>
             </a>
           </ScaleIn>
 

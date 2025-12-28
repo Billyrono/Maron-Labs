@@ -9,7 +9,7 @@ import { Shield, Lock, FileCheck, Award, Target, Lightbulb, Users, Heart } from 
 
 export const metadata = {
     title: "About Us - Maron Labs",
-    description: "Learn about Maron Labs - a premium digital solutions agency crafting exceptional online experiences since 2024."
+    description: "Learn about Maron Labs - a premium digital solutions agency crafting exceptional online experiences since 2025."
 }
 
 export default function AboutPage() {
@@ -52,7 +52,7 @@ export default function AboutPage() {
                                     Our Story
                                 </h2>
                                 <p className="text-lg text-[#161312] mb-6 leading-relaxed">
-                                    Founded in 2024, Maron Labs emerged from a vision to bridge the gap between creative excellence
+                                    Founded in 2025, Maron Labs emerged from a vision to bridge the gap between creative excellence
                                     and technical innovation. We recognized that businesses needed more than just websites – they
                                     needed digital partners who understand their unique challenges and goals.
                                 </p>

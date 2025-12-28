@@ -28,7 +28,7 @@ export default function Footer() {
               </div>
               <p className="text-[#979696] text-sm mb-4">Your Vision, Our Creation</p>
               <p className="text-[#979696] text-sm leading-relaxed">
-                Premium digital solutions agency crafting exceptional online experiences since 2024.
+                Premium digital solutions agency crafting exceptional online experiences since 2025.
               </p>
             </div>
           </FadeIn>
@@ -112,8 +112,8 @@ export default function Footer() {
               <h4 className="font-bold text-[#f9f8f9] mb-4">Contact Us</h4>
               <ul className="space-y-3 text-[#979696] text-sm">
                 <li>
-                  <a href="tel:+254746537878" className="hover:text-[#cc5500] transition flex items-center gap-3 group">
-                    <Phone className="w-4 h-4 text-[#cc5500] group-hover:scale-110 transition-transform" /> +254 746 537 878
+                  <a href="tel:+254700270670" className="hover:text-[#cc5500] transition flex items-center gap-3 group">
+                    <Phone className="w-4 h-4 text-[#cc5500] group-hover:scale-110 transition-transform" /> +254 700 270 670
                   </a>
                 </li>
                 <li>
@@ -133,7 +133,7 @@ export default function Footer() {
 
               {/* WhatsApp Quick Contact */}
               <a
-                href="https://wa.me/254746537878"
+                href="https://wa.me/254700270670"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-[#25D366] text-[#ffffff] rounded text-sm font-medium hover:bg-[#128C7E] transition hover:scale-105"
