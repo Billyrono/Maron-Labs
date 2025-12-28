@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     description: "Transform your vision into digital excellence. Premium web design, development, and digital marketing solutions in Kenya.",
     images: [
       {
-        url: "/images/og-image.png",
+        url: "https://maronlabs.com/images/og-image.png",
         width: 1200,
         height: 630,
         alt: "Maron Labs - Digital Solutions Agency",
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Maron Labs - Premium Digital Solutions Agency",
     description: "Transform your vision into digital excellence. Premium web design and development in Kenya.",
-    images: ["/images/og-image.png"],
+    images: ["https://maronlabs.com/images/og-image.png"],
   },
   verification: {
     google: "your-google-verification-code",
