@@ -29,23 +29,33 @@ export default function ContactPage() {
         setError("")
 
         try {
-            // Submit to Netlify Forms
-            const formElement = e.currentTarget
-            const formDataObj = new FormData(formElement)
+            // Build form data manually to ensure all fields are included
+            const formBody = new URLSearchParams({
+                "form-name": "contact",
+                "name": formData.name,
+                "email": formData.email,
+                "phone": formData.phone,
+                "service": formData.service,
+                "message": formData.message
+            }).toString()
+
+            console.log("Submitting form data:", formBody) // Debug log
 
             const response = await fetch("/", {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams(formDataObj as unknown as Record<string, string>).toString()
+                body: formBody
             })
+
+            console.log("Response status:", response.status) // Debug log
 
             if (response.ok) {
                 setIsSuccess(true)
-
                 // Reset form
                 setFormData({ name: "", email: "", phone: "", service: "", message: "" })
             } else {
-                throw new Error("Form submission failed")
+                console.error("Form submission failed with status:", response.status)
+                throw new Error(`Form submission failed: ${response.status}`)
             }
         } catch (err) {
             setError("Something went wrong. Please try again or contact us directly.")
