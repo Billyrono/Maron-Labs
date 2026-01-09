@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { ChevronLeft, ChevronRight, Globe, Palette, PenTool, Search, BookOpen, Settings, Smartphone, ShoppingCart, Mail } from "lucide-react"
 import { FadeIn } from "@/components/scroll-animations"
 
@@ -59,20 +59,32 @@ const services = [
     description:
       "Complete online store setup with payment integration, inventory management, and optimized checkout experiences.",
     icon: ShoppingCart,
-    features: ["Online Stores", "Payment Integration", "Inventory", "Analytics"],
+    features: ["Shopify", "WooCommerce", "Payment Gateways", "Inventory Management"],
   },
   {
     title: "Email Marketing",
     description:
-      "Strategic email campaigns that engage your audience, nurture leads, and drive conversions with personalized messaging.",
+      "Strategic email campaigns that nurture leads and drive conversions. From newsletters to automated sequences that engage your audience.",
     icon: Mail,
-    features: ["Campaigns", "Automation", "Newsletters", "A/B Testing"],
+    features: ["Newsletters", "Automation", "List Management", "Analytics"],
   },
 ]
 
 export default function Services() {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
   const itemsPerPage = 3
+
+  // Auto-scroll every 4 seconds (not too fast)
+  useEffect(() => {
+    if (isPaused) return
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % services.length)
+    }, 4000)
+
+    return () => clearInterval(interval)
+  }, [isPaused])
 
   const handlePrevious = () => {
     setCurrentIndex((prev) => (prev - 1 + services.length) % services.length)
@@ -109,33 +121,45 @@ export default function Services() {
         </FadeIn>
 
         {/* Carousel */}
-        <div className="relative">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {visibleServices.map((service, index) => {
-              const IconComponent = service.icon
-              return (
-                <div
-                  key={`${currentIndex}-${index}`}
-                  className="group p-8 bg-[#f9f8f9] border-2 border-transparent hover:border-[#cc5500] rounded-lg transition-all duration-300 hover:shadow-xl"
-                >
-                  <div className="w-14 h-14 bg-[#cc5500] rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <IconComponent className="w-7 h-7 text-[#f9f8f9]" />
+        <div
+          className="relative"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          <div className="overflow-hidden">
+            <div
+              className="flex transition-transform duration-700 ease-in-out"
+              style={{ transform: `translateX(-${(currentIndex % services.length) * (100 / 3)}%)` }}
+            >
+              {/* Render all services for smooth infinite scroll */}
+              {[...services, ...services.slice(0, 3)].map((service, index) => {
+                const IconComponent = service.icon
+                return (
+                  <div
+                    key={index}
+                    className="w-full md:w-1/3 flex-shrink-0 px-3"
+                  >
+                    <div className="group p-8 bg-[#f9f8f9] border-2 border-transparent hover:border-[#cc5500] rounded-lg transition-all duration-300 hover:shadow-xl h-full">
+                      <div className="w-14 h-14 bg-[#cc5500] rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <IconComponent className="w-7 h-7 text-[#f9f8f9]" />
+                      </div>
+                      <h3 className="text-xl font-bold text-[#000000] mb-3">{service.title}</h3>
+                      <p className="text-[#161312] leading-relaxed mb-4">{service.description}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {service.features.map((feature, idx) => (
+                          <span
+                            key={idx}
+                            className="text-xs px-2 py-1 bg-[#fee2b2] text-[#161312] rounded"
+                          >
+                            {feature}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold text-[#000000] mb-3">{service.title}</h3>
-                  <p className="text-[#161312] leading-relaxed mb-4">{service.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {service.features.map((feature, idx) => (
-                      <span
-                        key={idx}
-                        className="text-xs px-2 py-1 bg-[#fee2b2] text-[#161312] rounded"
-                      >
-                        {feature}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )
-            })}
+                )
+              })}
+            </div>
           </div>
 
           {/* Navigation Buttons */}

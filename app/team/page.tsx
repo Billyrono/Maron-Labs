@@ -56,6 +56,20 @@ const team = [
             email: "mwanikitiffany25@gmail.com"
         }
     },
+    {
+        name: "Enock Kipkoech",
+        role: "Full Stack Developer",
+        bio: "Passionate Full Stack Developer with 3+ years of experience building modern, scalable web applications. Enock specializes in React, Supabase, and Tailwind CSS, delivering fast, functional digital solutions with seamless payment integrations including Stripe, PayPal, and M-Pesa.",
+        expertise: ["React & Supabase", "SEO & Performance", "Payment Integrations", "Branding & UI"],
+        initials: "EK",
+        image: "/images/enock.webp",
+        color: "from-[#161312] to-[#cc5500]",
+        socials: {
+            linkedin: "https://www.linkedin.com/",
+            github: "https://github.com/",
+            email: "kipkoech.int@gmail.com"
+        }
+    },
 ]
 
 export default function TeamPage() {
