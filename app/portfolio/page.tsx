@@ -61,6 +61,62 @@ const projects = [
         image: "/images/gogreen.webp",
         tags: ["Non-Profit", "Environment", "Community", "Awareness"],
         link: "#"
+    },
+    {
+        title: "CareerWiz",
+        category: "Education & AI",
+        description: "An innovative application using Machine Learning to provide students with personalized career guidance based on their personal interests and academic performance. This platform bridges the gap of lack of personalized guidance for students seeking career direction.",
+        image: "/images/careerwiz.png",
+        tags: ["React.js", "Node.js", "Hono", "PostgreSQL"],
+        link: "https://careerwiz-frontend.vercel.app/"
+    },
+    {
+        title: "AniRent",
+        category: "Vehicle Management",
+        description: "A comprehensive Vehicle Management System application that allows users to manage vehicle rentals efficiently. Features include streamlined bookings, secure payment processing, and complete fleet management capabilities for rental businesses.",
+        image: "/images/anirent.png",
+        tags: ["React.js", "TailwindCSS", "Redux", "TypeScript"],
+        link: "https://ashy-mud-06186b40f.5.azurestaticapps.net/"
+    },
+    {
+        title: "SurgeProcure",
+        category: "E-Procurement",
+        description: "A collaborative e-procurement platform built to streamline the procurement process for organizations. The platform ensures efficiency and transparency throughout the entire procurement lifecycle, from requisition to payment.",
+        image: "/images/surge.png",
+        tags: ["React.js", "Node.js", "Hono", "PostgreSQL"],
+        link: "https://www.surgeprocure.co.ke/"
+    },
+    {
+        title: "Computer Society of Kirinyaga",
+        category: "Community",
+        description: "The official website of the Computer Society of Kirinyaga, dedicated to promoting technology-related events and sharing resources within the Kirinyaga University Tech community. A hub for tech enthusiasts and students.",
+        image: "/images/csk.png",
+        tags: ["React.js", "TailwindCSS", "Node.js", "Drizzle"],
+        link: "https://computersocietyofkirinyaga.tech/"
+    },
+    {
+        title: "Cyber Eyes Networks",
+        category: "Cybersecurity",
+        description: "A web application dedicated to showcasing cybersecurity content and resources. It offers various tools, techniques, and educational materials related to cybersecurity awareness and best practices.",
+        image: "/images/cyber.png",
+        tags: ["React.js", "Node.js", "Hono", "PostgreSQL"],
+        link: "https://cybereyesnetworks.co.ke/"
+    },
+    {
+        title: "CodeWorld",
+        category: "Developer Tools",
+        description: "A platform for sharing and collaborating on code projects. Users can create, edit, and manage projects in a seamless environment designed for developers who want to work together efficiently.",
+        image: "/images/code.png",
+        tags: ["React.js", "Node.js", "Hono", "TailwindCSS"],
+        link: "https://codeworld-frontend.vercel.app/"
+    },
+    {
+        title: "Queen's Mart",
+        category: "E-Commerce",
+        description: "Queens Mart is your one-stop destination for convenience, style, and quality. Combining a supermarket, boutique, café, and spare parts shop, we offer exceptional service and premium products in a welcoming atmosphere. Whether shopping for essentials, updating your wardrobe, enjoying a meal, or finding reliable spare parts.",
+        image: "/images/Queens.png",
+        tags: ["Retail", "Supermarket", "Boutique", "Café"],
+        link: "https://queensmart.netlify.app/"
     }
 ]
 
@@ -146,6 +202,39 @@ export default function PortfolioPage() {
                                 </div>
                             </FadeIn>
                         ))}
+
+                        {/* Your Project Card */}
+                        <FadeIn delay={projects.length * 100}>
+                            <Link href="/contact" className="block h-full">
+                                <div className="bg-gradient-to-br from-[#161312] to-[#2a2523] rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all group h-full flex flex-col min-h-[400px] cursor-pointer animate-bounce-subtle">
+                                    {/* Top Section */}
+                                    <div className="relative h-56 overflow-hidden bg-[#1f1c1a] flex items-center justify-center border-b-4 border-dashed border-[#cc5500]/50">
+                                        <div className="absolute inset-0 opacity-10">
+                                            <div className="absolute top-4 left-4 w-16 h-16 border-2 border-[#cc5500] rounded-lg rotate-12" />
+                                            <div className="absolute bottom-6 right-6 w-24 h-24 border-2 border-[#cc5500] rounded-lg -rotate-6" />
+                                        </div>
+                                        <div className="text-center relative z-10">
+                                            <div className="w-20 h-20 bg-[#cc5500] rounded-full flex items-center justify-center">
+                                                <span className="text-5xl font-bold text-white">+</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Content */}
+                                    <div className="p-6 flex flex-col flex-grow justify-center text-center">
+                                        <p className="text-[#cc5500] text-sm mb-2" style={{ fontFamily: "Yellowtail" }}>
+                                            Coming Soon
+                                        </p>
+                                        <h3 className="text-2xl font-bold text-[#f9f8f9] mb-3" style={{ fontFamily: "Oswald" }}>
+                                            Your Project Here
+                                        </h3>
+                                        <p className="text-[#f9f8f9]/60 text-sm leading-relaxed">
+                                            This spot is reserved for your next big idea.
+                                        </p>
+                                    </div>
+                                </div>
+                            </Link>
+                        </FadeIn>
                     </div>
                 </div>
             </section>
