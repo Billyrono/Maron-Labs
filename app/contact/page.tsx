@@ -80,7 +80,7 @@ export default function ContactPage() {
                         fill
                         className="object-cover opacity-30"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#161312]/30 to-[#161312]/30" />
+                    <div className="absolute inset-0 bg-linear-to-b from-[#161312]/30 to-[#161312]/30" />
                 </div>
                 <div className="max-w-4xl mx-auto text-center relative z-10">
                     <p className="text-[#cc5500] mb-4 text-lg" style={{ fontFamily: "Yellowtail" }}>
@@ -289,7 +289,7 @@ export default function ContactPage() {
 
                             {/* WhatsApp CTA */}
                             <FadeIn delay={200}>
-                                <div className="bg-gradient-to-r from-[#25D366] to-[#128C7E] rounded-lg p-6 text-[#ffffff]">
+                                <div className="bg-linear-to-r from-[#25D366] to-[#128C7E] rounded-lg p-6 text-[#ffffff]">
                                     <h3 className="text-xl font-bold mb-2">Prefer WhatsApp?</h3>
                                     <p className="opacity-90 mb-4">Get a faster response by messaging us directly on WhatsApp.</p>
                                     <a
