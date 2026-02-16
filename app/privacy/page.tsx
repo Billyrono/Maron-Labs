@@ -22,7 +22,7 @@ export default function PrivacyPage() {
                     <h1 className="text-4xl sm:text-5xl font-black text-[#f9f8f9] mb-4" style={{ fontFamily: "Oswald" }}>
                         Privacy Policy
                     </h1>
-                    <p className="text-[#979696]">Last updated: December 2025</p>
+                    <p className="text-[#979696]">Last updated: February 2026</p>
                 </div>
             </section>
 
@@ -251,9 +251,11 @@ export default function PrivacyPage() {
                                     11. Changes to This Policy
                                 </h2>
                                 <p className="text-[#161312] leading-relaxed">
-                                    We may update this Privacy Policy from time to time. Any changes will be posted on this page
-                                    with an updated "Last updated" date. We encourage you to review this policy periodically.
-                                    Continued use of our website or services after any changes constitutes acceptance of the updated policy.
+                                    <strong>We reserve the right to update this Privacy Policy at any time and without prior notice.</strong>{" "}
+                                    Any changes will be posted on this page with an updated "Last updated" date and shall become
+                                    effective immediately upon posting. Your continued use of our website or services after any
+                                    changes constitutes your binding acceptance of the updated policy. It is your sole responsibility
+                                    to review this policy periodically for modifications.
                                 </p>
                             </div>
 
@@ -268,7 +270,7 @@ export default function PrivacyPage() {
                                 <div className="bg-[#ffffff] p-6 rounded-lg border border-[#979696]/20">
                                     <p className="text-[#161312] mb-2"><strong>Maron Labs</strong></p>
                                     <p className="text-[#161312] mb-2">Email: hello@maronlabs.com</p>
-                                    <p className="text-[#161312] mb-2">Phone: +254 746 537 878</p>
+                                    <p className="text-[#161312] mb-2">Phone: +254 700 270 670</p>
                                     <p className="text-[#161312]">Location: Nairobi, Kenya</p>
                                 </div>
                             </div>

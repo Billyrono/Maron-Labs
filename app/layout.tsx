@@ -95,6 +95,8 @@ export const metadata: Metadata = {
   },
 }
 
+import CookieConsent from "@/components/cookie-consent"
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -113,6 +115,7 @@ export default function RootLayout({
       </head>
       <body className={`font-sans antialiased overflow-x-hidden ${_leagueSpartan.variable} ${_yellowtail.variable} ${_oswald.variable}`}>
         {children}
+        <CookieConsent />
         <Analytics />
       </body>
     </html>

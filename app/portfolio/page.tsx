@@ -28,7 +28,7 @@ const projects = [
         description: "A comprehensive, modern website for one of Kenya's prestigious high schools. We created a responsive platform that elegantly showcases academics, extracurricular activities, admissions processes, and school events. The clean UI and intuitive navigation make it easy for parents and students to find information.",
         image: "/images/shulesite.webp",
         tags: ["Education", "Web Design", "Responsive", "CMS"],
-        link: "https://shulesite.netlify.app/"
+        link: "https://shulesite.netlify.app"
     },
     {
         title: "Eagles Nest Villa",
@@ -44,7 +44,7 @@ const projects = [
         description: "A professional real estate platform built for showcasing premium properties across Kenya. The website features an intuitive property listing system, advanced filtering options, and dedicated pages for sales, rentals, and investment opportunities. Modern design meets powerful functionality.",
         image: "/images/marongroup.webp",
         tags: ["Real Estate", "Property Listings", "Web Development", "SEO"],
-        link: "https://marongroup.netlify.app/"
+        link: "https://marongroup.netlify.app"
     },
     {
         title: "Ricom Care Services",
@@ -68,7 +68,7 @@ const projects = [
         description: "An innovative application using Machine Learning to provide students with personalized career guidance based on their personal interests and academic performance. This platform bridges the gap of lack of personalized guidance for students seeking career direction.",
         image: "/images/careerwiz.png",
         tags: ["React.js", "Node.js", "Hono", "PostgreSQL"],
-        link: "https://careerwiz-frontend.vercel.app/"
+        link: "https://careerwiz-frontend.vercel.app"
     },
     {
         title: "AniRent",
@@ -76,7 +76,7 @@ const projects = [
         description: "A comprehensive Vehicle Management System application that allows users to manage vehicle rentals efficiently. Features include streamlined bookings, secure payment processing, and complete fleet management capabilities for rental businesses.",
         image: "/images/anirent.png",
         tags: ["React.js", "TailwindCSS", "Redux", "TypeScript"],
-        link: "https://ashy-mud-06186b40f.5.azurestaticapps.net/"
+        link: "https://ashy-mud-06186b40f.5.azurestaticapps.net"
     },
     {
         title: "SurgeProcure",
@@ -84,7 +84,7 @@ const projects = [
         description: "A collaborative e-procurement platform built to streamline the procurement process for organizations. The platform ensures efficiency and transparency throughout the entire procurement lifecycle, from requisition to payment.",
         image: "/images/surge.png",
         tags: ["React.js", "Node.js", "Hono", "PostgreSQL"],
-        link: "https://www.surgeprocure.co.ke/"
+        link: "https://www.surgeprocure.co.ke"
     },
     {
         title: "Computer Society of Kirinyaga",
@@ -92,7 +92,7 @@ const projects = [
         description: "The official website of the Computer Society of Kirinyaga, dedicated to promoting technology-related events and sharing resources within the Kirinyaga University Tech community. A hub for tech enthusiasts and students.",
         image: "/images/csk.png",
         tags: ["React.js", "TailwindCSS", "Node.js", "Drizzle"],
-        link: "https://computersocietyofkirinyaga.tech/"
+        link: "https://computersocietyofkirinyaga.tech"
     },
     {
         title: "Cyber Eyes Networks",
@@ -100,7 +100,7 @@ const projects = [
         description: "A web application dedicated to showcasing cybersecurity content and resources. It offers various tools, techniques, and educational materials related to cybersecurity awareness and best practices.",
         image: "/images/cyber.png",
         tags: ["React.js", "Node.js", "Hono", "PostgreSQL"],
-        link: "https://cybereyesnetworks.co.ke/"
+        link: "https://cybereyesnetworks.co.ke"
     },
     {
         title: "CodeWorld",
@@ -108,7 +108,7 @@ const projects = [
         description: "A platform for sharing and collaborating on code projects. Users can create, edit, and manage projects in a seamless environment designed for developers who want to work together efficiently.",
         image: "/images/code.png",
         tags: ["React.js", "Node.js", "Hono", "TailwindCSS"],
-        link: "https://codeworld-frontend.vercel.app/"
+        link: "https://codeworld-frontend.vercel.app"
     },
     {
         title: "Queen's Mart",
@@ -116,7 +116,23 @@ const projects = [
         description: "Queens Mart is your one-stop destination for convenience, style, and quality. Combining a supermarket, boutique, café, and spare parts shop, we offer exceptional service and premium products in a welcoming atmosphere. Whether shopping for essentials, updating your wardrobe, enjoying a meal, or finding reliable spare parts.",
         image: "/images/Queens.png",
         tags: ["Retail", "Supermarket", "Boutique", "Café"],
-        link: "https://queensmart.netlify.app/"
+        link: "https://queensmart.netlify.app"
+    },
+    {
+        title: "FreshCart",
+        category: "Grocery Delivery",
+        description: "A revolutionary grocery shopping platform connecting communities with fresh, locally-sourced produce. Serving thousands of families across Kenya with farm-fresh groceries delivered right to their doorsteps, featuring lightning-fast delivery, quality guarantee, and 24/7 customer support.",
+        image: "/images/FreshCart.png",
+        tags: ["E-Commerce", "Delivery", "Local Partners", "Fresh Produce"],
+        link: "https://fresh-cart-beta-hazel.vercel.app"
+    },
+    {
+        title: "Fannoh Naturals",
+        category: "E-Commerce",
+        description: "A premium natural skincare brand offering products formulated with African botanicals. The website features a clean, elegant design with product showcases, customer testimonials, and a seamless shopping experience — all built to reflect the brand's commitment to clean beauty and ethical sourcing.",
+        image: "/images/Fannoh.png",
+        tags: ["Skincare", "E-Commerce", "Clean Beauty", "Made in Kenya"],
+        link: "https://fannoh-naturals.vercel.app"
     }
 ]
 
@@ -135,7 +151,7 @@ export default function PortfolioPage() {
                         fill
                         className="object-cover opacity-20"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#161312]/30 to-[#161312]/30" />
+                    <div className="absolute inset-0 bg-linear-to-b from-[#161312]/30 to-[#161312]/30" />
                 </div>
                 <div className="max-w-4xl mx-auto text-center relative z-10">
                     <p className="text-[#cc5500] mb-4 text-lg" style={{ fontFamily: "Yellowtail" }}>
@@ -167,7 +183,7 @@ export default function PortfolioPage() {
                                                 className="object-cover group-hover:scale-110 transition-transform duration-500"
                                             />
                                         </a>
-                                        <div className="absolute inset-0 bg-gradient-to-t from-[#161312] to-transparent opacity-60" />
+                                        <div className="absolute inset-0 bg-linear-to-t from-[#161312] to-transparent opacity-60" />
                                         <div className="absolute bottom-4 left-4">
                                             <span className="px-3 py-1 bg-[#cc5500] text-[#f9f8f9] text-sm rounded font-medium">
                                                 {project.category}
@@ -176,7 +192,7 @@ export default function PortfolioPage() {
                                     </div>
 
                                     {/* Project Info */}
-                                    <div className="p-6 flex flex-col flex-grow">
+                                    <div className="p-6 flex flex-col grow">
                                         <div className="flex items-start justify-between mb-2">
                                             <h3 className="text-xl font-bold text-[#000000]">{project.title}</h3>
                                             <a
@@ -188,7 +204,7 @@ export default function PortfolioPage() {
                                                 <ArrowUpRight className="w-4 h-4" />
                                             </a>
                                         </div>
-                                        <p className="text-[#979696] mb-4 text-sm leading-relaxed flex-grow">{project.description}</p>
+                                        <p className="text-[#979696] mb-4 text-sm leading-relaxed grow">{project.description}</p>
 
                                         {/* Tags */}
                                         <div className="flex flex-wrap gap-2 mt-auto">
@@ -206,7 +222,7 @@ export default function PortfolioPage() {
                         {/* Your Project Card */}
                         <FadeIn delay={projects.length * 100}>
                             <Link href="/contact" className="block h-full">
-                                <div className="bg-gradient-to-br from-[#161312] to-[#2a2523] rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all group h-full flex flex-col min-h-[400px] cursor-pointer animate-bounce-subtle">
+                                <div className="bg-linear-to-br from-[#161312] to-[#2a2523] rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all group h-full flex flex-col min-h-[400px] cursor-pointer animate-bounce-subtle">
                                     {/* Top Section */}
                                     <div className="relative h-56 overflow-hidden bg-[#1f1c1a] flex items-center justify-center border-b-4 border-dashed border-[#cc5500]/50">
                                         <div className="absolute inset-0 opacity-10">
@@ -221,7 +237,7 @@ export default function PortfolioPage() {
                                     </div>
 
                                     {/* Content */}
-                                    <div className="p-6 flex flex-col flex-grow justify-center text-center">
+                                    <div className="p-6 flex flex-col grow justify-center text-center">
                                         <p className="text-[#cc5500] text-sm mb-2" style={{ fontFamily: "Yellowtail" }}>
                                             Coming Soon
                                         </p>

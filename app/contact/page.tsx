@@ -17,7 +17,8 @@ export default function ContactPage() {
         email: "",
         phone: "",
         service: "",
-        message: ""
+        message: "",
+        agreedToTerms: false
     })
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [isSuccess, setIsSuccess] = useState(false)
@@ -52,7 +53,7 @@ export default function ContactPage() {
             if (response.ok) {
                 setIsSuccess(true)
                 // Reset form
-                setFormData({ name: "", email: "", phone: "", service: "", message: "" })
+                setFormData({ name: "", email: "", phone: "", service: "", message: "", agreedToTerms: false })
             } else {
                 console.error("Form submission failed with status:", response.status)
                 throw new Error(`Form submission failed: ${response.status}`)
@@ -194,9 +195,32 @@ export default function ContactPage() {
                                                 placeholder="Tell us about your project..."
                                             />
                                         </div>
+
+                                        {/* ToS Agreement */}
+                                        <div className="flex items-start gap-3">
+                                            <input
+                                                type="checkbox"
+                                                id="agreedToTerms"
+                                                required
+                                                checked={formData.agreedToTerms}
+                                                onChange={(e) => setFormData({ ...formData, agreedToTerms: e.target.checked })}
+                                                className="mt-1 w-4 h-4 accent-[#cc5500] cursor-pointer"
+                                            />
+                                            <label htmlFor="agreedToTerms" className="text-sm text-[#161312] leading-relaxed cursor-pointer">
+                                                I agree to the{" "}
+                                                <a href="/terms" target="_blank" rel="noopener noreferrer" className="text-[#cc5500] underline hover:text-[#a83f00] transition">
+                                                    Terms of Service
+                                                </a>{" "}
+                                                and{" "}
+                                                <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-[#cc5500] underline hover:text-[#a83f00] transition">
+                                                    Privacy Policy
+                                                </a>. *
+                                            </label>
+                                        </div>
+
                                         <button
                                             type="submit"
-                                            disabled={isSubmitting}
+                                            disabled={isSubmitting || !formData.agreedToTerms}
                                             className="w-full px-8 py-4 bg-[#cc5500] text-[#f9f8f9] rounded font-bold hover:bg-[#a83f00] transition-all flex items-center justify-center gap-2 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                                         >
                                             {isSubmitting ? (

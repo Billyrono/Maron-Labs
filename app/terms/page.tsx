@@ -22,7 +22,7 @@ export default function TermsPage() {
                     <h1 className="text-4xl sm:text-5xl font-black text-[#f9f8f9] mb-4" style={{ fontFamily: "Oswald" }}>
                         Terms of Service
                     </h1>
-                    <p className="text-[#979696]">Last updated: December 2025</p>
+                    <p className="text-[#979696]">Last updated: February 2026</p>
                 </div>
             </section>
 
@@ -38,8 +38,14 @@ export default function TermsPage() {
                                     1. Introduction
                                 </h2>
                                 <p className="text-[#161312] leading-relaxed mb-4">
-                                    Welcome to Maron Labs. These Terms of Service ("Terms") govern your use of our website and services.
-                                    By accessing our website or engaging our services, you agree to be bound by these Terms.
+                                    Welcome to Maron Labs. These Terms of Service ("Terms") constitute a legally binding agreement
+                                    between you ("Client," "you," or "your") and Maron Labs ("we," "us," or "our"). These Terms govern
+                                    your access to and use of our website, services, and all related communications.
+                                </p>
+                                <p className="text-[#161312] leading-relaxed mb-4">
+                                    <strong>By accessing, browsing, or using our website in any manner, or by engaging our services,
+                                        you acknowledge that you have read, understood, and agree to be bound by these Terms in their entirety.</strong>{" "}
+                                    If you do not agree to these Terms, you must immediately cease all use of our website and services.
                                 </p>
                                 <p className="text-[#161312] leading-relaxed">
                                     Maron Labs is a digital solutions agency registered and operating in Nairobi, Kenya.
@@ -88,9 +94,17 @@ export default function TermsPage() {
                                 </p>
 
                                 <h3 className="text-xl font-bold text-[#161312] mb-3">3.3 Project Timeline</h3>
-                                <p className="text-[#161312] leading-relaxed">
+                                <p className="text-[#161312] leading-relaxed mb-4">
                                     Estimated timelines are provided in good faith based on the project scope. Delays caused by
                                     client feedback, content provision, or scope changes may extend the project timeline.
+                                    Maron Labs shall not be held liable for any losses arising from timeline extensions caused by client-side delays.
+                                </p>
+
+                                <h3 className="text-xl font-bold text-[#161312] mb-3">3.4 Client Inactivity</h3>
+                                <p className="text-[#161312] leading-relaxed">
+                                    If a client becomes unresponsive for a period exceeding 30 consecutive days without prior written notice,
+                                    Maron Labs reserves the right to consider the project abandoned. In such cases, no refund shall be issued
+                                    for work already completed, and any outstanding balances shall remain due and payable.
                                 </p>
                             </div>
 
@@ -119,8 +133,10 @@ export default function TermsPage() {
 
                                 <h3 className="text-xl font-bold text-[#161312] mb-3">4.4 Late Payments</h3>
                                 <p className="text-[#161312] leading-relaxed">
-                                    Late payments may result in project delays or suspension of services.
-                                    We reserve the right to charge interest on overdue amounts at 2% per month.
+                                    Late payments shall result in immediate suspension of all ongoing services and project work
+                                    until full settlement of outstanding amounts. We reserve the right to charge interest on
+                                    overdue amounts at a rate of 2% per month, compounded monthly. Persistent non-payment may
+                                    result in referral to a debt collection agency, with all associated costs borne by the client.
                                 </p>
                             </div>
 
@@ -186,15 +202,24 @@ export default function TermsPage() {
                                 </h2>
                                 <h3 className="text-xl font-bold text-[#161312] mb-3">8.1 Service Warranty</h3>
                                 <p className="text-[#161312] leading-relaxed mb-4">
-                                    We warrant that our work will be performed with reasonable skill and care.
-                                    For websites, we provide a 30-day bug-fix warranty after launch for issues related to our work.
+                                    We warrant that our work will be performed with reasonable skill and care consistent
+                                    with industry standards. For websites, we provide a 30-day bug-fix warranty after launch
+                                    for functional defects directly attributable to our work. This warranty does not cover
+                                    issues arising from client modifications, third-party integrations, hosting environment
+                                    changes, or content updates made by the client after delivery.
                                 </p>
 
                                 <h3 className="text-xl font-bold text-[#161312] mb-3">8.2 Limitation of Liability</h3>
+                                <p className="text-[#161312] leading-relaxed mb-4">
+                                    To the maximum extent permitted by applicable law, Maron Labs' total aggregate liability
+                                    for any and all claims arising out of or in connection with our services shall not exceed
+                                    the total fees actually paid by the client for the specific project giving rise to the claim.
+                                </p>
                                 <p className="text-[#161312] leading-relaxed">
-                                    Maron Labs' total liability shall not exceed the total fees paid for the specific project.
-                                    We are not liable for indirect, consequential, or incidental damages, loss of data,
-                                    or lost business opportunities.
+                                    In no event shall Maron Labs be liable for any indirect, incidental, special, consequential,
+                                    or punitive damages, including but not limited to loss of profits, loss of data, loss of
+                                    business opportunities, business interruption, or reputational harm, regardless of whether
+                                    such damages were foreseeable or whether Maron Labs was advised of the possibility of such damages.
                                 </p>
                             </div>
 
@@ -230,22 +255,45 @@ export default function TermsPage() {
                                 </p>
                             </div>
 
+                            {/* Modifications to Terms */}
+                            <div className="mb-12">
+                                <h2 className="text-2xl font-bold text-[#000000] mb-4" style={{ fontFamily: "Oswald" }}>
+                                    11. Modifications to These Terms
+                                </h2>
+                                <p className="text-[#161312] leading-relaxed mb-4">
+                                    <strong>Maron Labs reserves the right to modify, amend, or update these Terms of Service at any time
+                                        and without prior notice.</strong> Any changes shall become effective immediately upon being posted
+                                    on this page with an updated "Last updated" date.
+                                </p>
+                                <p className="text-[#161312] leading-relaxed">
+                                    Your continued use of our website or services following the posting of revised Terms constitutes
+                                    your binding acceptance of such changes. It is your sole responsibility to periodically review
+                                    these Terms for any updates or modifications. If you do not agree with the revised Terms,
+                                    you must immediately discontinue use of our website and services.
+                                </p>
+                            </div>
+
                             {/* Governing Law */}
                             <div className="mb-12">
                                 <h2 className="text-2xl font-bold text-[#000000] mb-4" style={{ fontFamily: "Oswald" }}>
-                                    11. Governing Law
+                                    12. Governing Law and Dispute Resolution
                                 </h2>
+                                <p className="text-[#161312] leading-relaxed mb-4">
+                                    These Terms shall be governed by and construed in accordance with the laws of the Republic of Kenya,
+                                    without regard to its conflict of law provisions.
+                                </p>
                                 <p className="text-[#161312] leading-relaxed">
-                                    These Terms shall be governed by and construed in accordance with the laws of Kenya.
-                                    Any disputes arising from these Terms or our services shall be subject to the
-                                    exclusive jurisdiction of the courts of Kenya.
+                                    Any disputes arising out of or in connection with these Terms or our services shall first be
+                                    attempted to be resolved amicably through good-faith negotiation between the parties. Should
+                                    negotiation fail, the dispute shall be subject to the exclusive jurisdiction of the courts
+                                    of Nairobi, Kenya. Each party shall bear its own legal costs unless otherwise ordered by the court.
                                 </p>
                             </div>
 
                             {/* Contact */}
                             <div className="mb-12">
                                 <h2 className="text-2xl font-bold text-[#000000] mb-4" style={{ fontFamily: "Oswald" }}>
-                                    12. Contact Information
+                                    13. Contact Information
                                 </h2>
                                 <p className="text-[#161312] leading-relaxed mb-4">
                                     For questions about these Terms of Service, please contact us:
@@ -253,7 +301,7 @@ export default function TermsPage() {
                                 <div className="bg-[#ffffff] p-6 rounded-lg border border-[#979696]/20">
                                     <p className="text-[#161312] mb-2"><strong>Maron Labs</strong></p>
                                     <p className="text-[#161312] mb-2">Email: hello@maronlabs.com</p>
-                                    <p className="text-[#161312] mb-2">Phone: +254 746 537 878</p>
+                                    <p className="text-[#161312] mb-2">Phone: +254 700 270 670</p>
                                     <p className="text-[#161312]">Location: Nairobi, Kenya</p>
                                 </div>
                             </div>
