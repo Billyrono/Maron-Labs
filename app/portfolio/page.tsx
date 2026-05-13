@@ -55,12 +55,12 @@ const projects = [
         link: "https://ricomcareservices.co.ke"
     },
     {
-        title: "Go Green Initiative",
-        category: "Environmental",
-        description: "An impactful website for an environmental sustainability initiative promoting eco-friendly practices and green solutions in Kenya. The platform features educational content, campaign information, and community engagement tools to inspire positive environmental action.",
-        image: "/images/gogreen.webp",
-        tags: ["Non-Profit", "Environment", "Community", "Awareness"],
-        link: "#"
+        title: "Savannah Trails Kenya",
+        category: "Travel & Tourism",
+        description: "A stunning travel and tourism website showcasing authentic Kenyan experiences — from unforgettable safaris in the Maasai Mara to pristine beaches of Diani and vibrant cultural experiences in Nairobi. The platform features tour packages, gallery, booking system, and expert local guide profiles.",
+        image: "/images/savannahtrails.webp",
+        tags: ["Tourism", "Travel", "Safari", "Web Design"],
+        link: "https://savannahtrailskenya.co.ke"
     },
     {
         title: "CareerWiz",
