@@ -59,7 +59,7 @@ const projects = [
         category: "Travel & Tourism",
         description: "A stunning travel and tourism website showcasing authentic Kenyan experiences — from unforgettable safaris in the Maasai Mara to pristine beaches of Diani and vibrant cultural experiences in Nairobi. The platform features tour packages, gallery, booking system, and expert local guide profiles.",
         image: "/images/savannahtrails.webp",
-        tags: ["Tourism", "Travel", "Safari", "Web Design"],
+        tags: ["Tourism", "Travel", "Safari", "Booking"],
         link: "https://savannahtrailskenya.co.ke"
     },
     {
