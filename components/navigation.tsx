@@ -71,16 +71,16 @@ export default function Navigation() {
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${getNavbarClasses()}`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          {/* Logo - always use dark background logo since navbar is always dark/transparent */}
-          <Link href="/" className="flex items-center">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-12 sm:h-16 md:h-20">
+          {/* Logo */}
+          <Link href="/" className="flex items-center flex-shrink-0">
             <Image
               src="/logos/Maron Labs Black background Logo.svg"
               alt="Maron Labs"
               width={220}
               height={64}
-              className="h-16 w-auto"
+              className="h-8 sm:h-12 md:h-16 w-auto"
               priority
             />
           </Link>
@@ -107,11 +107,12 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden"
+            className="md:hidden p-1 flex-shrink-0"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
           >
             <svg
-              className="w-6 h-6 text-[#f9f8f9]"
+              className="w-5 h-5 sm:w-6 sm:h-6 text-[#f9f8f9]"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -127,54 +128,29 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden pb-4 border-t border-[#f9f8f9]/10 bg-[#161312]/95 backdrop-blur-md animate-in slide-in-from-top duration-200">
-            <Link
-              href="/"
-              className="block py-3 text-[#f9f8f9] hover:text-[#cc5500] transition"
-              onClick={() => setIsOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              href="/about"
-              className="block py-3 text-[#f9f8f9] hover:text-[#cc5500] transition"
-              onClick={() => setIsOpen(false)}
-            >
-              About
-            </Link>
-            <Link
-              href="/services"
-              className="block py-3 text-[#f9f8f9] hover:text-[#cc5500] transition"
-              onClick={() => setIsOpen(false)}
-            >
-              Services
-            </Link>
-            <Link
-              href="/portfolio"
-              className="block py-3 text-[#f9f8f9] hover:text-[#cc5500] transition"
-              onClick={() => setIsOpen(false)}
-            >
-              Portfolio
-            </Link>
-            <Link
-              href="/team"
-              className="block py-3 text-[#f9f8f9] hover:text-[#cc5500] transition"
-              onClick={() => setIsOpen(false)}
-            >
-              Team
-            </Link>
-            <Link
-              href="/contact"
-              className="block py-3 text-[#f9f8f9] hover:text-[#cc5500] transition"
-              onClick={() => setIsOpen(false)}
-            >
-              Contact
-            </Link>
+          <div className="md:hidden px-2 py-2 sm:p-4 border-t border-[#f9f8f9]/10 bg-[#161312]/95 backdrop-blur-md animate-in slide-in-from-top duration-200">
+            {[
+              { href: "/", label: "Home" },
+              { href: "/about", label: "About" },
+              { href: "/services", label: "Services" },
+              { href: "/portfolio", label: "Portfolio" },
+              { href: "/team", label: "Team" },
+              { href: "/contact", label: "Contact" },
+            ].map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                className="block py-2 sm:py-3 text-sm sm:text-base text-[#f9f8f9] hover:text-[#cc5500] transition border-b border-[#f9f8f9]/5 last:border-0"
+                onClick={() => setIsOpen(false)}
+              >
+                {label}
+              </Link>
+            ))}
             <a
               href="https://wa.me/254700270670"
               target="_blank"
               rel="noopener noreferrer"
-              className="block mt-4 px-6 py-3 bg-[#cc5500] text-[#f9f8f9] rounded text-center font-medium hover:bg-[#a83f00] transition"
+              className="block mt-3 px-4 py-2 sm:px-6 sm:py-3 bg-[#cc5500] text-[#f9f8f9] rounded text-center text-sm font-medium hover:bg-[#a83f00] transition"
             >
               Let's Talk on WhatsApp
             </a>

@@ -1,7 +1,6 @@
 import Navigation from "@/components/navigation"
 import Footer from "@/components/sections/footer"
 import ProgressBar from "@/components/progress-bar"
-import MobileCTA from "@/components/mobile-cta"
 import PageLoader from "@/components/page-loader"
 import { FadeIn } from "@/components/scroll-animations"
 
@@ -313,7 +312,6 @@ export default function TermsPage() {
 
             <Footer />
             <ProgressBar />
-            <MobileCTA />
         </main>
     )
 }

@@ -7,7 +7,6 @@ import CTA from "@/components/sections/cta"
 import Footer from "@/components/sections/footer"
 import Navigation from "@/components/navigation"
 import ProgressBar from "@/components/progress-bar"
-import MobileCTA from "@/components/mobile-cta"
 import PageLoader from "@/components/page-loader"
 
 export default function Home() {
@@ -23,7 +22,6 @@ export default function Home() {
       <Newsletter />
       <CTA />
       <Footer />
-      <MobileCTA />
     </main>
   )
 }

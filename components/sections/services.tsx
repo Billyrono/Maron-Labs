@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef, useCallback } from "react"
 import { ChevronLeft, ChevronRight, Globe, Palette, PenTool, Search, BookOpen, Settings, Smartphone, ShoppingCart, Mail } from "lucide-react"
 import { FadeIn } from "@/components/scroll-animations"
 
@@ -73,7 +73,31 @@ const services = [
 export default function Services() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
-  const itemsPerPage = 3
+  const [itemsPerView, setItemsPerView] = useState(3)
+  const touchStartX = useRef<number | null>(null)
+  const touchEndX = useRef<number | null>(null)
+
+  // Detect screen size and set items per view
+  useEffect(() => {
+    const updateItemsPerView = () => {
+      if (window.innerWidth < 450) {
+        setItemsPerView(1)
+      } else if (window.innerWidth < 950) {
+        setItemsPerView(2)
+      } else {
+        setItemsPerView(3)
+      }
+    }
+
+    updateItemsPerView()
+    window.addEventListener("resize", updateItemsPerView)
+    return () => window.removeEventListener("resize", updateItemsPerView)
+  }, [])
+
+  // Reset index when switching between mobile/desktop to prevent out-of-bounds
+  useEffect(() => {
+    setCurrentIndex(0)
+  }, [itemsPerView])
 
   // Auto-scroll every 4 seconds (not too fast)
   useEffect(() => {
@@ -86,18 +110,41 @@ export default function Services() {
     return () => clearInterval(interval)
   }, [isPaused])
 
-  const handlePrevious = () => {
+  const handlePrevious = useCallback(() => {
     setCurrentIndex((prev) => (prev - 1 + services.length) % services.length)
-  }
+  }, [])
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % services.length)
+  }, [])
+
+  // Touch handlers for swipe support on mobile
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.targetTouches[0].clientX
   }
 
-  const visibleServices = []
-  for (let i = 0; i < itemsPerPage; i++) {
-    visibleServices.push(services[(currentIndex + i) % services.length])
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX
   }
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current === null || touchEndX.current === null) return
+    const distance = touchStartX.current - touchEndX.current
+    const minSwipeDistance = 50
+
+    if (distance > minSwipeDistance) {
+      handleNext()
+    } else if (distance < -minSwipeDistance) {
+      handlePrevious()
+    }
+
+    touchStartX.current = null
+    touchEndX.current = null
+  }
+
+  // Calculate translateX percentage based on items per view
+  const slidePercentage = 100 / itemsPerView
+  const translateX = (currentIndex % services.length) * slidePercentage
 
   return (
     <section id="services" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#ffffff]">
@@ -125,19 +172,23 @@ export default function Services() {
           className="relative"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           <div className="overflow-hidden">
             <div
               className="flex transition-transform duration-700 ease-in-out"
-              style={{ transform: `translateX(-${(currentIndex % services.length) * (100 / 3)}%)` }}
+              style={{ transform: `translateX(-${translateX}%)` }}
             >
               {/* Render all services for smooth infinite scroll */}
-              {[...services, ...services.slice(0, 3)].map((service, index) => {
+              {[...services, ...services.slice(0, itemsPerView)].map((service, index) => {
                 const IconComponent = service.icon
                 return (
                   <div
                     key={index}
-                    className="w-full md:w-1/3 flex-shrink-0 px-3"
+                    className="flex-shrink-0 px-3"
+                    style={{ width: `${slidePercentage}%` }}
                   >
                     <div className="group p-8 bg-[#f9f8f9] border-2 border-transparent hover:border-[#cc5500] rounded-lg transition-all duration-300 hover:shadow-xl h-full">
                       <div className="w-14 h-14 bg-[#cc5500] rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
@@ -165,18 +216,18 @@ export default function Services() {
           {/* Navigation Buttons */}
           <button
             onClick={handlePrevious}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-14 p-3 bg-[#f9f8f9] hover:bg-[#fee2b2] rounded-full transition shadow-lg border border-[#979696]/20"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-14 p-2 md:p-3 bg-[#f9f8f9] hover:bg-[#fee2b2] rounded-full transition shadow-lg border border-[#979696]/20 z-10"
             aria-label="Previous services"
           >
-            <ChevronLeft className="w-5 h-5 text-[#cc5500]" />
+            <ChevronLeft className="w-4 h-4 md:w-5 md:h-5 text-[#cc5500]" />
           </button>
 
           <button
             onClick={handleNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-14 p-3 bg-[#f9f8f9] hover:bg-[#fee2b2] rounded-full transition shadow-lg border border-[#979696]/20"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-14 p-2 md:p-3 bg-[#f9f8f9] hover:bg-[#fee2b2] rounded-full transition shadow-lg border border-[#979696]/20 z-10"
             aria-label="Next services"
           >
-            <ChevronRight className="w-5 h-5 text-[#cc5500]" />
+            <ChevronRight className="w-4 h-4 md:w-5 md:h-5 text-[#cc5500]" />
           </button>
         </div>
 

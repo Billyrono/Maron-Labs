@@ -4,7 +4,6 @@ import { useState } from "react"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/sections/footer"
 import ProgressBar from "@/components/progress-bar"
-import MobileCTA from "@/components/mobile-cta"
 import PageLoader from "@/components/page-loader"
 import { FadeIn } from "@/components/scroll-animations"
 import Image from "next/image"
@@ -333,7 +332,6 @@ export default function ContactPage() {
 
             <Footer />
             <ProgressBar />
-            <MobileCTA />
         </main>
     )
 }

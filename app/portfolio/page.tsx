@@ -1,7 +1,6 @@
 import Navigation from "@/components/navigation"
 import Footer from "@/components/sections/footer"
 import ProgressBar from "@/components/progress-bar"
-import MobileCTA from "@/components/mobile-cta"
 import PageLoader from "@/components/page-loader"
 import Image from "next/image"
 import Link from "next/link"
@@ -23,12 +22,12 @@ const projects = [
         link: "https://cartiercarter.com"
     },
     {
-        title: "Kenya High School",
-        category: "Education",
-        description: "A comprehensive, modern website for one of Kenya's prestigious high schools. We created a responsive platform that elegantly showcases academics, extracurricular activities, admissions processes, and school events. The clean UI and intuitive navigation make it easy for parents and students to find information.",
-        image: "/images/shulesite.webp",
-        tags: ["Education", "Web Design", "Responsive", "CMS"],
-        link: "https://shulesite.netlify.app"
+        title: "Fannoh Naturals",
+        category: "E-Commerce",
+        description: "A premium natural skincare brand offering products formulated with African botanicals. The website features a clean, elegant design with product showcases, customer testimonials, and a seamless shopping experience — all built to reflect the brand's commitment to clean beauty and ethical sourcing.",
+        image: "/images/Fannoh.png",
+        tags: ["Skincare", "E-Commerce", "Clean Beauty", "Made in Kenya"],
+        link: "https://fannohnaturals.com"
     },
     {
         title: "Eagles Nest Villa",
@@ -39,36 +38,12 @@ const projects = [
         link: "https://eaglesnest.co.ke"
     },
     {
-        title: "Maron Group Realtors",
-        category: "Real Estate",
-        description: "A professional real estate platform built for showcasing premium properties across Kenya. The website features an intuitive property listing system, advanced filtering options, and dedicated pages for sales, rentals, and investment opportunities. Modern design meets powerful functionality.",
-        image: "/images/marongroup.webp",
-        tags: ["Real Estate", "Property Listings", "Web Development", "SEO"],
-        link: "https://marongroup.netlify.app"
-    },
-    {
         title: "Ricom Care Services",
         category: "Professional Services",
         description: "A clean, professional website for a leading cleaning and care services company in Kenya. We built a platform that effectively communicates their range of services, builds trust through testimonials, and makes it easy for potential clients to request quotes and book services online.",
         image: "/images/ricomcare.webp",
         tags: ["Services", "Corporate", "Lead Generation", "Responsive"],
         link: "https://ricomcareservices.co.ke"
-    },
-    {
-        title: "Savannah Trails Kenya",
-        category: "Travel & Tourism",
-        description: "A stunning travel and tourism website showcasing authentic Kenyan experiences — from unforgettable safaris in the Maasai Mara to pristine beaches of Diani and vibrant cultural experiences in Nairobi. The platform features tour packages, gallery, booking system, and expert local guide profiles.",
-        image: "/images/savannahtrails.webp",
-        tags: ["Tourism", "Travel", "Safari", "Booking"],
-        link: "https://savannahtrailskenya.co.ke"
-    },
-    {
-        title: "CareerWiz",
-        category: "Education & AI",
-        description: "An innovative application using Machine Learning to provide students with personalized career guidance based on their personal interests and academic performance. This platform bridges the gap of lack of personalized guidance for students seeking career direction.",
-        image: "/images/careerwiz.png",
-        tags: ["React.js", "Node.js", "Hono", "PostgreSQL"],
-        link: "https://careerwiz-frontend.vercel.app"
     },
     {
         title: "AniRent",
@@ -103,12 +78,12 @@ const projects = [
         link: "https://cybereyesnetworks.co.ke"
     },
     {
-        title: "CodeWorld",
-        category: "Developer Tools",
-        description: "A platform for sharing and collaborating on code projects. Users can create, edit, and manage projects in a seamless environment designed for developers who want to work together efficiently.",
-        image: "/images/code.png",
-        tags: ["React.js", "Node.js", "Hono", "TailwindCSS"],
-        link: "https://codeworld-frontend.vercel.app"
+        title: "FreshCart",
+        category: "Grocery Delivery",
+        description: "A revolutionary grocery shopping platform connecting communities with fresh, locally-sourced produce. Serving thousands of families across Kenya with farm-fresh groceries delivered right to their doorsteps, featuring lightning-fast delivery, quality guarantee, and 24/7 customer support.",
+        image: "/images/FreshCart.png",
+        tags: ["E-Commerce", "Delivery", "Local Partners", "Fresh Produce"],
+        link: "https://fresh-cart-beta-hazel.vercel.app"
     },
     {
         title: "Queen's Mart",
@@ -119,20 +94,44 @@ const projects = [
         link: "https://queensmart.netlify.app"
     },
     {
-        title: "FreshCart",
-        category: "Grocery Delivery",
-        description: "A revolutionary grocery shopping platform connecting communities with fresh, locally-sourced produce. Serving thousands of families across Kenya with farm-fresh groceries delivered right to their doorsteps, featuring lightning-fast delivery, quality guarantee, and 24/7 customer support.",
-        image: "/images/FreshCart.png",
-        tags: ["E-Commerce", "Delivery", "Local Partners", "Fresh Produce"],
-        link: "https://fresh-cart-beta-hazel.vercel.app"
+        title: "Maron Group Realtors",
+        category: "Real Estate",
+        description: "A professional real estate platform built for showcasing premium properties across Kenya. The website features an intuitive property listing system, advanced filtering options, and dedicated pages for sales, rentals, and investment opportunities. Modern design meets powerful functionality.",
+        image: "/images/marongroup.webp",
+        tags: ["Real Estate", "Property Listings", "Web Development", "SEO"],
+        link: "https://marongroup.netlify.app"
     },
     {
-        title: "Fannoh Naturals",
-        category: "E-Commerce",
-        description: "A premium natural skincare brand offering products formulated with African botanicals. The website features a clean, elegant design with product showcases, customer testimonials, and a seamless shopping experience — all built to reflect the brand's commitment to clean beauty and ethical sourcing.",
-        image: "/images/Fannoh.png",
-        tags: ["Skincare", "E-Commerce", "Clean Beauty", "Made in Kenya"],
-        link: "https://fannoh-naturals.vercel.app"
+        title: "Savannah Trails Kenya",
+        category: "Travel & Tourism",
+        description: "A stunning travel and tourism website showcasing authentic Kenyan experiences — from unforgettable safaris in the Maasai Mara to pristine beaches of Diani and vibrant cultural experiences in Nairobi. The platform features tour packages, gallery, booking system, and expert local guide profiles.",
+        image: "/images/savannahtrails.webp",
+        tags: ["Tourism", "Travel", "Safari", "Booking"],
+        link: "https://savannahtrails.netlify.app"
+    },
+    {
+        title: "CareerWiz",
+        category: "Education & AI",
+        description: "An innovative application using Machine Learning to provide students with personalized career guidance based on their personal interests and academic performance. This platform bridges the gap of lack of personalized guidance for students seeking career direction.",
+        image: "/images/careerwiz.png",
+        tags: ["React.js", "Node.js", "Hono", "PostgreSQL"],
+        link: "https://careerwiz-frontend.vercel.app"
+    },
+    {
+        title: "Kenya High School",
+        category: "Education",
+        description: "A comprehensive, modern website for one of Kenya's prestigious high schools. We created a responsive platform that elegantly showcases academics, extracurricular activities, admissions processes, and school events. The clean UI and intuitive navigation make it easy for parents and students to find information.",
+        image: "/images/shulesite.webp",
+        tags: ["Education", "Web Design", "Responsive", "CMS"],
+        link: "https://shulesite.netlify.app"
+    },
+    {
+        title: "CodeWorld",
+        category: "Developer Tools",
+        description: "A platform for sharing and collaborating on code projects. Users can create, edit, and manage projects in a seamless environment designed for developers who want to work together efficiently.",
+        image: "/images/code.png",
+        tags: ["React.js", "Node.js", "Hono", "TailwindCSS"],
+        link: "https://codeworld-frontend.vercel.app"
     }
 ]
 
@@ -277,7 +276,6 @@ export default function PortfolioPage() {
 
             <Footer />
             <ProgressBar />
-            <MobileCTA />
         </main>
     )
 }

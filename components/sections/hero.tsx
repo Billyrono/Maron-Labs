@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import { ArrowDown, MessageCircle, ChevronLeft, ChevronRight } from "lucide-react"
-import { AnimatedCounter } from "@/components/scroll-animations"
+import { ArrowDown, MessageCircle } from "lucide-react"
 
 const carouselImages = [
   {
@@ -66,22 +65,6 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[#000000]/60 z-10" />
       </div>
 
-      {/* Carousel Navigation Arrows */}
-      <button
-        onClick={goToPrevious}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-3 bg-[#f9f8f9]/20 hover:bg-[#cc5500] rounded-full transition-all backdrop-blur-sm"
-        aria-label="Previous slide"
-      >
-        <ChevronLeft className="w-6 h-6 text-[#f9f8f9]" />
-      </button>
-      <button
-        onClick={goToNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-3 bg-[#f9f8f9]/20 hover:bg-[#cc5500] rounded-full transition-all backdrop-blur-sm"
-        aria-label="Next slide"
-      >
-        <ChevronRight className="w-6 h-6 text-[#f9f8f9]" />
-      </button>
-
       {/* Carousel Dots */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
         {carouselImages.map((_, index) => (
@@ -112,13 +95,6 @@ export default function Hero() {
           Transforming Ideas into <span className="text-[#cc5500]">Digital Excellence</span>
         </h1>
 
-        {/* Subheading - uncomment when ready */}
-        {/* <p className="text-lg sm:text-xl text-[#f9f8f9]/90 mb-12 max-w-3xl mx-auto leading-relaxed">
-          Maron Labs is a premium digital solutions agency crafting exceptional online experiences through web design,
-          development, and strategic marketing. We blend creativity with cutting-edge technology to create impactful
-          solutions that drive success.
-        </p> */}
-
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
           <a
@@ -137,28 +113,6 @@ export default function Hero() {
             Chat on WhatsApp
           </a>
         </div>
-
-        {/* Quick Stats with Animated Counters */}
-        {/* <div className="mt-16 grid grid-cols-3 gap-8 max-w-md mx-auto">
-          <div className="text-center">
-            <p className="text-3xl sm:text-4xl font-black text-[#cc5500]">
-              <AnimatedCounter end={50} suffix="+" />
-            </p>
-            <p className="text-sm text-[#f9f8f9]/70">Projects</p>
-          </div>
-          <div className="text-center">
-            <p className="text-3xl sm:text-4xl font-black text-[#cc5500]">
-              <AnimatedCounter end={30} suffix="+" />
-            </p>
-            <p className="text-sm text-[#f9f8f9]/70">Clients</p>
-          </div>
-          <div className="text-center">
-            <p className="text-3xl sm:text-4xl font-black text-[#cc5500]">
-              <AnimatedCounter end={2025} duration={1500} />
-            </p>
-            <p className="text-sm text-[#f9f8f9]/70">Established</p>
-          </div>
-        </div> */}
 
         {/* Scroll Indicator */}
         <div className="mt-12 flex justify-center">
