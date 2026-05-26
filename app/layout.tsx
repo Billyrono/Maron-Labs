@@ -102,7 +102,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className={`font-sans antialiased overflow-x-hidden ${_playfair.variable} ${_montserrat.variable}`}>
-        {children}
+        <div className="relative overflow-x-hidden w-full max-w-[100vw] min-h-screen flex flex-col">
+          {children}
+        </div>
         <CookieConsent />
         <Analytics />
       </body>
