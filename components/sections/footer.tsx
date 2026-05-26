@@ -71,6 +71,7 @@ export default function Footer() {
                   { label: "Contact", href: "/contact" },
                   { label: "Terms", href: "/terms" },
                   { label: "Privacy", href: "/privacy" },
+                  { label: "Cookie Policy", href: "/cookie-policy" },
                 ].map((item) => (
                   <li key={item.href}>
                     <Link href={item.href} className="text-sm text-[#979696] hover:text-[#f9f8f9] transition-colors duration-300 tracking-wide">
