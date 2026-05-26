@@ -47,22 +47,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://maron-labs.netlify.app",
     siteName: "Maron Labs",
-    title: "Maron Labs - Premium Digital Solutions Agency",
-    description: "Transform your vision into digital excellence. Premium web design, development, and digital marketing solutions in Kenya.",
-    images: [
-      {
-        url: "https://maron-labs.netlify.app/images/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Maron Labs - Digital Solutions Agency",
-      },
-    ],
+    title: "Maron Labs - Premium Tech & Digital Solutions",
+    description: "Transform your vision into digital excellence. Premium enterprise systems, AI development, and digital marketing solutions.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Maron Labs - Premium Digital Solutions Agency",
-    description: "Transform your vision into digital excellence. Premium web design and development in Kenya.",
-    images: ["https://maron-labs.netlify.app/images/og-image.png"],
+    title: "Maron Labs - Premium Tech & Digital Solutions",
+    description: "Transform your vision into digital excellence. Premium enterprise systems, AI development, and digital marketing solutions.",
   },
   verification: {
     google: "your-google-verification-code",
