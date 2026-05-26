@@ -211,6 +211,7 @@ export default function TermsPage() {
                                 <div className="space-y-4 text-sm tracking-wide text-[#f9f8f9]">
                                     <p><span className="text-[#cc5500] uppercase tracking-[0.2em] text-[10px] inline-block w-24">Email</span> hello@maronlabs.com</p>
                                     <p><span className="text-[#cc5500] uppercase tracking-[0.2em] text-[10px] inline-block w-24">Phone</span> +254 700 270 670</p>
+                                    <p><span className="text-[#cc5500] uppercase tracking-[0.2em] text-[10px] inline-block w-24">Location</span> Nairobi, Kenya</p>
                                 </div>
                             </div>
                         </FadeIn>

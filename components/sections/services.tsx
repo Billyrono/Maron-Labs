@@ -1,72 +1,57 @@
 "use client"
 
 import { useState, useEffect, useRef, useCallback } from "react"
-import { ChevronLeft, ChevronRight, Globe, Palette, PenTool, Search, BookOpen, Settings, Smartphone, ShoppingCart, Mail } from "lucide-react"
+import { ChevronLeft, ChevronRight, Globe, Palette, PenTool, Search, Smartphone, ShoppingCart, Monitor, Cpu, Database, Laptop } from "lucide-react"
 import { FadeIn } from "@/components/scroll-animations"
 
 const services = [
   {
-    title: "Web Dev & Design",
-    description:
-      "End-to-end web solutions combining creative design with cutting-edge development. Responsive, fast, and optimized for conversions across all devices.",
+    title: "System Development",
+    description: "Enterprise-grade software solutions and complete tech system management. We build robust, scalable architectures.",
+    icon: Database,
+    features: ["Custom Software", "Cloud Architecture", "API Development"],
+  },
+  {
+    title: "AI Development",
+    description: "Cutting-edge AI integration and corporate training programs. We help businesses leverage machine learning.",
+    icon: Cpu,
+    features: ["AI Integration", "Machine Learning", "Workflow Automation"],
+  },
+  {
+    title: "Tech Products",
+    description: "Premium tech hardware sourcing and deployment. From corporate laptops to specialized setups.",
+    icon: Laptop,
+    features: ["Corporate Laptops", "Office Setup", "Tech Procurement"],
+  },
+  {
+    title: "Web Design & Dev",
+    description: "End-to-end web solutions combining creative design with cutting-edge development. Responsive and fast.",
     icon: Globe,
-    features: ["Custom Websites", "E-commerce", "Web Applications", "Responsive Design"],
+    features: ["Custom Websites", "Web Applications", "Responsive Design"],
+  },
+  {
+    title: "Mobile Apps",
+    description: "Native and cross-platform mobile applications that deliver exceptional user experiences.",
+    icon: Smartphone,
+    features: ["iOS Development", "Android Development", "Cross-Platform Apps"],
+  },
+  {
+    title: "E-Commerce",
+    description: "Complete online store setup with payment integration, inventory management, and optimized checkouts.",
+    icon: ShoppingCart,
+    features: ["Store Setup", "Payment Gateways", "Inventory Management"],
   },
   {
     title: "Graphic Design",
-    description:
-      "Captivating visual communications from logos to marketing materials. Every design reflects your unique identity and vision with meticulous attention to detail.",
+    description: "Captivating visual communications that tell your brand story. From logos to complete brand identities.",
     icon: Palette,
-    features: ["Logo Design", "Brand Identity", "Marketing Materials", "Social Media Graphics"],
+    features: ["Logo Design", "Brand Identity", "Marketing Materials"],
   },
   {
-    title: "Content Creation",
-    description:
-      "Engaging content that connects with your audience. From blogs to social media, we tell your story effectively with compelling narratives.",
-    icon: PenTool,
-    features: ["Blog Writing", "Copywriting", "Social Media", "Email Campaigns"],
-  },
-  {
-    title: "SEO Optimization",
-    description:
-      "Strategic SEO to boost visibility and drive organic traffic. We implement comprehensive strategies to ensure your website reaches its full potential.",
+    title: "Digital Marketing",
+    description: "Strategic marketing and SEO to boost visibility. We implement comprehensive strategies to drive traffic.",
     icon: Search,
-    features: ["Keyword Research", "On-Page SEO", "Technical SEO", "Analytics"],
-  },
-  {
-    title: "Digital Publications",
-    description:
-      "Professional e-books, whitepapers, and brochures. Visually appealing and optimized for digital consumption with proper formatting.",
-    icon: BookOpen,
-    features: ["E-books", "Whitepapers", "Brochures", "Reports"],
-  },
-  {
-    title: "Maintenance & Support",
-    description:
-      "Ongoing care for your digital assets. Updates, monitoring, security, and backup solutions to keep you running smoothly 24/7.",
-    icon: Settings,
-    features: ["Updates", "Security", "Backups", "Monitoring"],
-  },
-  {
-    title: "Mobile App Development",
-    description:
-      "Native and cross-platform mobile applications that deliver exceptional user experiences on iOS and Android devices.",
-    icon: Smartphone,
-    features: ["iOS Apps", "Android Apps", "Cross-Platform", "App Maintenance"],
-  },
-  {
-    title: "E-Commerce Solutions",
-    description:
-      "Complete online store setup with payment integration, inventory management, and optimized checkout experiences.",
-    icon: ShoppingCart,
-    features: ["Shopify", "WooCommerce", "Payment Gateways", "Inventory Management"],
-  },
-  {
-    title: "Email Marketing",
-    description:
-      "Strategic email campaigns that nurture leads and drive conversions. From newsletters to automated sequences that engage your audience.",
-    icon: Mail,
-    features: ["Newsletters", "Automation", "List Management", "Analytics"],
+    features: ["Keyword Research", "Technical SEO", "Content Strategy"],
   },
 ]
 

@@ -32,7 +32,7 @@ export default function Footer() {
         {/* Divider */}
         <div className="w-full h-[1px] bg-[#f9f8f9]/5 mb-16" />
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-16">
           {/* About */}
           <FadeIn delay={0}>
             <div>
@@ -69,8 +69,26 @@ export default function Footer() {
                   { label: "Our Team", href: "/team" },
                   { label: "Portfolio", href: "/portfolio" },
                   { label: "Contact", href: "/contact" },
-                  { label: "Terms", href: "/terms" },
-                  { label: "Privacy", href: "/privacy" },
+                  { label: "Affiliates", href: "/affiliates" },
+                ].map((item) => (
+                  <li key={item.href}>
+                    <Link href={item.href} className="text-sm text-[#979696] hover:text-[#f9f8f9] transition-colors duration-300 tracking-wide">
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </FadeIn>
+
+          {/* Legal */}
+          <FadeIn delay={250}>
+            <div>
+              <h4 className="text-[10px] uppercase tracking-[0.3em] text-[#f9f8f9]/40 mb-6">Legal</h4>
+              <ul className="space-y-3">
+                {[
+                  { label: "Terms of Service", href: "/terms" },
+                  { label: "Privacy Policy", href: "/privacy" },
                   { label: "Cookie Policy", href: "/cookie-policy" },
                 ].map((item) => (
                   <li key={item.href}>
