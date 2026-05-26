@@ -8,29 +8,31 @@ const _playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playf
 const _montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat" })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://maronlabs.com"),
+  metadataBase: new URL("https://maron-labs.netlify.app"),
   title: {
-    default: "Maron Labs - Premium Digital Solutions Agency | Web Design & Development",
+    default: "Maron Labs - Premium Tech & Digital Solutions",
     template: "%s | Maron Labs"
   },
-  description: "Maron Labs is a premium digital solutions agency in Nairobi, Kenya. We specialize in web design, development, graphic design, SEO, and digital marketing. Transform your vision into digital excellence.",
+  description: "Maron Labs is a premium digital solutions agency in Nairobi, Kenya. We specialize in enterprise systems, AI development, web design, and digital marketing. Transform your vision into digital excellence.",
   keywords: [
     "web design Kenya",
     "web development Nairobi",
     "digital agency Kenya",
-    "web design agency",
-    "graphic design Kenya",
+    "software development",
+    "AI integration",
     "SEO services Kenya",
     "digital marketing Nairobi",
-    "mobile app development",
-    "e-commerce solutions",
     "Maron Labs",
-    "premium web design",
-    "responsive web design"
+    "premium web design"
   ],
-  authors: [{ name: "Maron Labs", url: "https://maronlabs.com" }],
+  authors: [{ name: "Maron Labs", url: "https://maron-labs.netlify.app" }],
   creator: "Maron Labs",
   publisher: "Maron Labs",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   robots: {
     index: true,
     follow: true,
@@ -49,11 +51,21 @@ export const metadata: Metadata = {
     siteName: "Maron Labs",
     title: "Maron Labs - Premium Tech & Digital Solutions",
     description: "Transform your vision into digital excellence. Premium enterprise systems, AI development, and digital marketing solutions.",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Maron Labs - Premium Tech & Digital Solutions",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Maron Labs - Premium Tech & Digital Solutions",
     description: "Transform your vision into digital excellence. Premium enterprise systems, AI development, and digital marketing solutions.",
+    creator: "@maronlabs",
+    images: ["/opengraph-image"],
   },
   verification: {
     google: "your-google-verification-code",
