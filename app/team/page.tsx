@@ -4,6 +4,7 @@ import ProgressBar from "@/components/progress-bar"
 import PageLoader from "@/components/page-loader"
 import { FadeIn } from "@/components/scroll-animations"
 import Image from "next/image"
+import TouchImage from "@/components/touch-image"
 import { Linkedin, Mail, Github } from "lucide-react"
 
 export const metadata = {
@@ -111,11 +112,11 @@ export default function TeamPage() {
                                     <div className="w-full lg:w-1/2">
                                         <div className="relative aspect-[4/5] group overflow-hidden border border-[#161312]/10 bg-[#161312]">
                                             {member.image ? (
-                                                <Image
+                                                <TouchImage
                                                     src={member.image}
                                                     alt={member.name}
                                                     fill
-                                                    className="object-cover object-center filter grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105 group-active:grayscale-0 group-active:scale-105"
+                                                    className="object-cover object-center filter grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
                                                 />
                                             ) : (
                                                 <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#161312] to-[#000000]">

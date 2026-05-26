@@ -3,6 +3,7 @@ import Footer from "@/components/sections/footer"
 import ProgressBar from "@/components/progress-bar"
 import PageLoader from "@/components/page-loader"
 import Image from "next/image"
+import TouchImage from "@/components/touch-image"
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
 import { FadeIn } from "@/components/scroll-animations"
@@ -184,11 +185,11 @@ export default function PortfolioPage() {
                                     {/* Project Image */}
                                     <div className="relative h-64 overflow-hidden bg-[#161312]">
                                         <a href={project.link} target="_blank" rel="noopener noreferrer">
-                                            <Image
+                                            <TouchImage
                                                 src={project.image}
                                                 alt={project.title}
                                                 fill
-                                                className="object-cover filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 group-active:grayscale-0 group-active:opacity-100 group-active:scale-105 transition-all duration-1000"
+                                                className="object-cover filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000"
                                             />
                                         </a>
                                         <div className="absolute top-4 left-4 z-10">
