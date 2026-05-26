@@ -132,6 +132,14 @@ const projects = [
         image: "/images/code.png",
         tags: ["React.js", "Node.js", "Hono", "TailwindCSS"],
         link: "https://codeworld-frontend.vercel.app"
+    },
+    {
+        title: "Moonarts",
+        category: "E-Commerce",
+        description: "A luxury leather atelier website showcasing handcrafted, premium leather bags and bespoke upholstery in Nairobi. It features an elegant, dark-themed design highlighting their bespoke commissions.",
+        image: "/images/Moonarts.webp",
+        tags: ["E-Commerce", "Leather Goods", "Luxury", "UI/UX"],
+        link: "https://moonarts.vercel.app"
     }
 ]
 
