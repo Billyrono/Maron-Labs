@@ -4,7 +4,7 @@ import ProgressBar from "@/components/progress-bar"
 import PageLoader from "@/components/page-loader"
 import Image from "next/image"
 import Link from "next/link"
-import { ExternalLink, ArrowUpRight } from "lucide-react"
+import { ArrowUpRight } from "lucide-react"
 import { FadeIn } from "@/components/scroll-animations"
 
 export const metadata = {
@@ -145,7 +145,7 @@ const projects = [
 
 export default function PortfolioPage() {
     return (
-        <main className="min-h-screen">
+        <main className="min-h-screen bg-[#000000]">
             <PageLoader />
             <Navigation />
 
@@ -156,67 +156,72 @@ export default function PortfolioPage() {
                         src="/images/Image 1.svg"
                         alt="Our Portfolio"
                         fill
-                        className="object-cover opacity-20"
+                        className="object-cover opacity-15"
                     />
-                    <div className="absolute inset-0 bg-linear-to-b from-[#161312]/30 to-[#161312]/30" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#161312]/30 to-[#161312]/80" />
                 </div>
                 <div className="max-w-4xl mx-auto text-center relative z-10">
-                    <p className="text-[#cc5500] mb-4 text-lg" style={{ fontFamily: "Yellowtail" }}>
+                    <p className="text-[11px] uppercase tracking-[0.5em] text-[#cc5500] mb-6">
                         Our Work
                     </p>
-                    <h1 className="text-5xl sm:text-6xl font-black text-[#f9f8f9] mb-6" style={{ fontFamily: "Oswald" }}>
+                    <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-normal text-[#f9f8f9] mb-8 tracking-tight">
                         Portfolio
                     </h1>
-                    <p className="text-xl text-[#f9f8f9]/80 max-w-2xl mx-auto">
+                    <div className="w-16 h-[1px] bg-[#cc5500] mx-auto mb-8" />
+                    <p className="text-base text-[#f9f8f9]/50 max-w-2xl mx-auto leading-relaxed tracking-wide">
                         Explore our collection of successful projects showcasing our expertise in web design, development, and digital solutions for clients across Kenya and beyond.
                     </p>
                 </div>
             </section>
 
             {/* Projects Grid */}
-            <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#f9f8f9]">
+            <section className="py-32 px-4 sm:px-6 lg:px-8 bg-[#f9f8f9]">
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border border-[#161312]/10">
                         {projects.map((project, index) => (
                             <FadeIn key={index} delay={index * 100}>
-                                <div className="bg-[#ffffff] rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all group h-full flex flex-col">
+                                <div className="bg-[#ffffff] group h-full flex flex-col border-b border-r border-[#161312]/10 hover:bg-[#161312] transition-colors duration-700">
                                     {/* Project Image */}
-                                    <div className="relative h-56 overflow-hidden">
+                                    <div className="relative h-64 overflow-hidden bg-[#161312]">
                                         <a href={project.link} target="_blank" rel="noopener noreferrer">
                                             <Image
                                                 src={project.image}
                                                 alt={project.title}
                                                 fill
-                                                className="object-cover group-hover:scale-110 transition-transform duration-500"
+                                                className="object-cover filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000"
                                             />
                                         </a>
-                                        <div className="absolute inset-0 bg-linear-to-t from-[#161312] to-transparent opacity-60" />
-                                        <div className="absolute bottom-4 left-4">
-                                            <span className="px-3 py-1 bg-[#cc5500] text-[#f9f8f9] text-sm rounded font-medium">
+                                        <div className="absolute top-4 left-4 z-10">
+                                            <span className="px-4 py-1.5 bg-[#cc5500] text-[#f9f8f9] text-[10px] uppercase tracking-[0.2em] font-medium">
                                                 {project.category}
                                             </span>
                                         </div>
                                     </div>
 
                                     {/* Project Info */}
-                                    <div className="p-6 flex flex-col grow">
-                                        <div className="flex items-start justify-between mb-2">
-                                            <h3 className="text-xl font-bold text-[#000000]">{project.title}</h3>
+                                    <div className="p-10 flex flex-col grow">
+                                        <div className="flex items-start justify-between mb-6">
+                                            <h3 className="font-serif text-2xl font-normal text-[#161312] group-hover:text-[#f9f8f9] tracking-tight transition-colors duration-700">
+                                                {project.title}
+                                            </h3>
                                             <a
                                                 href={project.link}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="p-2 rounded-full bg-[#f9f8f9] hover:bg-[#cc5500] hover:text-[#f9f8f9] text-[#161312] transition-all"
+                                                className="w-10 h-10 border border-[#161312]/10 group-hover:border-[#f9f8f9]/20 flex items-center justify-center hover:bg-[#cc5500] hover:!border-[#cc5500] hover:text-[#f9f8f9] text-[#161312] group-hover:text-[#f9f8f9] transition-all duration-500 shrink-0"
                                             >
                                                 <ArrowUpRight className="w-4 h-4" />
                                             </a>
                                         </div>
-                                        <p className="text-[#979696] mb-4 text-sm leading-relaxed grow">{project.description}</p>
+                                        <div className="w-8 h-[1px] bg-[#cc5500] mb-6" />
+                                        <p className="text-[#979696] group-hover:text-[#f9f8f9]/60 text-sm leading-[1.8] tracking-wide grow mb-8 transition-colors duration-700">
+                                            {project.description}
+                                        </p>
 
                                         {/* Tags */}
                                         <div className="flex flex-wrap gap-2 mt-auto">
                                             {project.tags.map((tag, idx) => (
-                                                <span key={idx} className="px-2 py-1 bg-[#fee2b2] text-[#161312] text-xs rounded font-medium">
+                                                <span key={idx} className="px-3 py-1.5 border border-[#161312]/10 group-hover:border-[#f9f8f9]/10 text-[#161312] group-hover:text-[#f9f8f9]/80 text-[10px] uppercase tracking-[0.1em] transition-colors duration-700">
                                                     {tag}
                                                 </span>
                                             ))}
@@ -229,30 +234,20 @@ export default function PortfolioPage() {
                         {/* Your Project Card */}
                         <FadeIn delay={projects.length * 100}>
                             <Link href="/contact" className="block h-full">
-                                <div className="bg-linear-to-br from-[#161312] to-[#2a2523] rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all group h-full flex flex-col min-h-[400px] cursor-pointer animate-bounce-subtle">
-                                    {/* Top Section */}
-                                    <div className="relative h-56 overflow-hidden bg-[#1f1c1a] flex items-center justify-center border-b-4 border-dashed border-[#cc5500]/50">
-                                        <div className="absolute inset-0 opacity-10">
-                                            <div className="absolute top-4 left-4 w-16 h-16 border-2 border-[#cc5500] rounded-lg rotate-12" />
-                                            <div className="absolute bottom-6 right-6 w-24 h-24 border-2 border-[#cc5500] rounded-lg -rotate-6" />
+                                <div className="bg-[#cc5500] group h-full flex flex-col border-b border-r border-[#161312]/10 hover:bg-[#a83f00] transition-colors duration-700 cursor-pointer min-h-[500px]">
+                                    <div className="p-10 flex flex-col items-center justify-center grow text-center">
+                                        <div className="w-20 h-20 border border-[#f9f8f9]/30 flex items-center justify-center mb-8 group-hover:border-[#f9f8f9] transition-colors duration-500">
+                                            <span className="text-3xl font-light text-[#f9f8f9]">+</span>
                                         </div>
-                                        <div className="text-center relative z-10">
-                                            <div className="w-20 h-20 bg-[#cc5500] rounded-full flex items-center justify-center">
-                                                <span className="text-5xl font-bold text-white">+</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Content */}
-                                    <div className="p-6 flex flex-col grow justify-center text-center">
-                                        <p className="text-[#cc5500] text-sm mb-2" style={{ fontFamily: "Yellowtail" }}>
+                                        <p className="text-[11px] uppercase tracking-[0.3em] text-[#f9f8f9]/80 mb-4">
                                             Coming Soon
                                         </p>
-                                        <h3 className="text-2xl font-bold text-[#f9f8f9] mb-3" style={{ fontFamily: "Oswald" }}>
+                                        <h3 className="font-serif text-3xl font-normal text-[#f9f8f9] mb-6 tracking-tight">
                                             Your Project Here
                                         </h3>
-                                        <p className="text-[#f9f8f9]/60 text-sm leading-relaxed">
-                                            This spot is reserved for your next big idea.
+                                        <div className="w-12 h-[1px] bg-[#f9f8f9]/50 mx-auto mb-6" />
+                                        <p className="text-[#f9f8f9]/80 text-sm leading-[1.8] tracking-wide">
+                                            This spot is reserved for your next big idea. Let's create something extraordinary together.
                                         </p>
                                     </div>
                                 </div>
@@ -263,18 +258,19 @@ export default function PortfolioPage() {
             </section>
 
             {/* CTA */}
-            <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#161312]">
+            <section className="py-32 px-4 sm:px-6 lg:px-8 bg-[#000000]">
                 <FadeIn>
                     <div className="max-w-4xl mx-auto text-center">
-                        <h2 className="text-3xl sm:text-4xl font-black text-[#f9f8f9] mb-6" style={{ fontFamily: "Oswald" }}>
+                        <h2 className="font-serif text-3xl sm:text-4xl font-normal text-[#f9f8f9] mb-6 tracking-tight">
                             Ready to Start Your Project?
                         </h2>
-                        <p className="text-lg text-[#f9f8f9]/80 mb-8">
-                            Let's create something amazing together. Get in touch to discuss your next digital project.
+                        <div className="w-16 h-[1px] bg-[#cc5500] mx-auto mb-8" />
+                        <p className="text-base text-[#f9f8f9]/50 mb-10 tracking-wide leading-relaxed max-w-2xl mx-auto">
+                            Let&apos;s create something amazing together. Get in touch to discuss your next digital project.
                         </p>
                         <Link
                             href="/contact"
-                            className="inline-flex items-center gap-2 px-8 py-4 bg-[#cc5500] text-[#f9f8f9] rounded font-bold hover:bg-[#a83f00] transition-all hover:scale-105"
+                            className="group inline-flex items-center gap-3 px-10 py-4 bg-[#cc5500] text-[#f9f8f9] text-[13px] uppercase tracking-[0.25em] font-medium hover:bg-[#a83f00] transition-all duration-500"
                         >
                             Get Started
                         </Link>

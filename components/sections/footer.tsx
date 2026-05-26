@@ -3,7 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Linkedin, Twitter, Instagram, MessageCircle, ArrowUp, Phone, Mail, Globe, MapPin } from "lucide-react"
-import { FadeIn, ScaleIn } from "@/components/scroll-animations"
+import { FadeIn } from "@/components/scroll-animations"
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -11,197 +11,138 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-[#000000] text-[#f9f8f9] py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <footer className="bg-[#000000] text-[#f9f8f9] pt-24 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-          {/* Brand */}
-          <FadeIn delay={0} direction="up">
-            <div className="md:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
-              <div className="flex justify-center md:justify-start w-full">
-                <Image
-                  src="/logos/Maron Labs Black background Logo.svg"
-                  alt="Maron Labs"
-                  width={260}
-                  height={80}
-                  className="h-20 w-auto mb-4"
-                />
-              </div>
-              <p className="text-[#979696] text-sm mb-4">Your Vision, Our Creation</p>
-              <p className="text-[#979696] text-sm leading-relaxed">
+        {/* Top: Logo & Tagline centered */}
+        <FadeIn>
+          <div className="text-center mb-20">
+            <Image
+              src="/logos/Maron Labs Black background Logo.svg"
+              alt="Maron Labs"
+              width={400}
+              height={120}
+              className="h-24 w-auto mx-auto mb-8"
+            />
+            <p className="text-[11px] uppercase tracking-[0.4em] text-[#979696]">
+              Your Vision, Our Creation
+            </p>
+          </div>
+        </FadeIn>
+
+        {/* Divider */}
+        <div className="w-full h-[1px] bg-[#f9f8f9]/5 mb-16" />
+
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          {/* About */}
+          <FadeIn delay={0}>
+            <div>
+              <h4 className="text-[10px] uppercase tracking-[0.3em] text-[#f9f8f9]/40 mb-6">About</h4>
+              <p className="text-sm text-[#979696] leading-[1.8] tracking-wide">
                 Premium digital solutions agency crafting exceptional online experiences since 2025.
               </p>
             </div>
           </FadeIn>
 
           {/* Services */}
-          <FadeIn delay={100} direction="up">
+          <FadeIn delay={100}>
             <div>
-              <h4 className="font-bold text-[#f9f8f9] mb-4">Services</h4>
-              <ul className="space-y-2 text-[#979696] text-sm">
-                <li>
-                  <Link href="/services" className="hover:text-[#cc5500] transition hover:translate-x-1 inline-block">
-                    Web Design & Dev
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services" className="hover:text-[#cc5500] transition hover:translate-x-1 inline-block">
-                    Graphic Design
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services" className="hover:text-[#cc5500] transition hover:translate-x-1 inline-block">
-                    SEO Optimization
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services" className="hover:text-[#cc5500] transition hover:translate-x-1 inline-block">
-                    Content Creation
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services" className="hover:text-[#cc5500] transition hover:translate-x-1 inline-block">
-                    Mobile App Development
-                  </Link>
-                </li>
+              <h4 className="text-[10px] uppercase tracking-[0.3em] text-[#f9f8f9]/40 mb-6">Services</h4>
+              <ul className="space-y-3">
+                {["Web Design & Dev", "Graphic Design", "SEO Optimization", "Content Creation", "Mobile Apps"].map((item) => (
+                  <li key={item}>
+                    <Link href="/services" className="text-sm text-[#979696] hover:text-[#f9f8f9] transition-colors duration-300 tracking-wide">
+                      {item}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </FadeIn>
 
           {/* Company */}
-          <FadeIn delay={200} direction="up">
+          <FadeIn delay={200}>
             <div>
-              <h4 className="font-bold text-[#f9f8f9] mb-4">Company</h4>
-              <ul className="space-y-2 text-[#979696] text-sm">
-                <li>
-                  <Link href="/about" className="hover:text-[#cc5500] transition hover:translate-x-1 inline-block">
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/team" className="hover:text-[#cc5500] transition hover:translate-x-1 inline-block">
-                    Our Team
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/portfolio" className="hover:text-[#cc5500] transition hover:translate-x-1 inline-block">
-                    Portfolio
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="hover:text-[#cc5500] transition hover:translate-x-1 inline-block">
-                    Contact
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/terms" className="hover:text-[#cc5500] transition hover:translate-x-1 inline-block">
-                    Terms of Service
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/privacy" className="hover:text-[#cc5500] transition hover:translate-x-1 inline-block">
-                    Privacy Policy
-                  </Link>
-                </li>
+              <h4 className="text-[10px] uppercase tracking-[0.3em] text-[#f9f8f9]/40 mb-6">Company</h4>
+              <ul className="space-y-3">
+                {[
+                  { label: "About Us", href: "/about" },
+                  { label: "Our Team", href: "/team" },
+                  { label: "Portfolio", href: "/portfolio" },
+                  { label: "Contact", href: "/contact" },
+                  { label: "Terms", href: "/terms" },
+                  { label: "Privacy", href: "/privacy" },
+                ].map((item) => (
+                  <li key={item.href}>
+                    <Link href={item.href} className="text-sm text-[#979696] hover:text-[#f9f8f9] transition-colors duration-300 tracking-wide">
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </FadeIn>
 
           {/* Contact */}
-          <FadeIn delay={300} direction="up">
+          <FadeIn delay={300}>
             <div>
-              <h4 className="font-bold text-[#f9f8f9] mb-4">Contact Us</h4>
-              <ul className="space-y-3 text-[#979696] text-sm">
+              <h4 className="text-[10px] uppercase tracking-[0.3em] text-[#f9f8f9]/40 mb-6">Connect</h4>
+              <ul className="space-y-4">
                 <li>
-                  <a href="tel:+254700270670" className="hover:text-[#cc5500] transition flex items-center gap-3 group">
-                    <Phone className="w-4 h-4 text-[#cc5500] group-hover:scale-110 transition-transform" /> +254 700 270 670
+                  <a href="tel:+254700270670" className="text-sm text-[#979696] hover:text-[#f9f8f9] transition-colors duration-300 flex items-center gap-3 tracking-wide">
+                    <Phone className="w-3.5 h-3.5 text-[#cc5500]" /> +254 700 270 670
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:hello@maronlabs.com" className="hover:text-[#cc5500] transition flex items-center gap-3 group">
-                    <Mail className="w-4 h-4 text-[#cc5500] group-hover:scale-110 transition-transform" /> hello@maronlabs.com
+                  <a href="mailto:hello@maronlabs.com" className="text-sm text-[#979696] hover:text-[#f9f8f9] transition-colors duration-300 flex items-center gap-3 tracking-wide">
+                    <Mail className="w-3.5 h-3.5 text-[#cc5500]" /> hello@maronlabs.com
                   </a>
                 </li>
-                <li>
-                  <a href="https://www.maronlabs.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#cc5500] transition flex items-center gap-3 group">
-                    <Globe className="w-4 h-4 text-[#cc5500] group-hover:scale-110 transition-transform" /> www.maronlabs.com
-                  </a>
-                </li>
-                <li className="flex items-center gap-3">
-                  <MapPin className="w-4 h-4 text-[#cc5500]" /> Nairobi, Kenya
+                <li className="text-sm text-[#979696] flex items-center gap-3 tracking-wide">
+                  <MapPin className="w-3.5 h-3.5 text-[#cc5500]" /> Nairobi, Kenya
                 </li>
               </ul>
 
-              {/* WhatsApp Quick Contact */}
-              <a
-                href="https://wa.me/254700270670"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-[#25D366] text-[#ffffff] rounded text-sm font-medium hover:bg-[#128C7E] transition hover:scale-105"
-              >
-                <MessageCircle className="w-4 h-4" />
-                WhatsApp
-              </a>
+              {/* Social Icons */}
+              <div className="flex gap-4 mt-8">
+                {[
+                  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+                  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+                  { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+                ].map(({ icon: Icon, href, label }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-9 h-9 border border-[#f9f8f9]/10 flex items-center justify-center text-[#979696] hover:border-[#cc5500] hover:text-[#cc5500] transition-all duration-300"
+                    aria-label={label}
+                  >
+                    <Icon className="w-3.5 h-3.5" />
+                  </a>
+                ))}
+              </div>
             </div>
           </FadeIn>
         </div>
 
-        {/* Divider */}
-        <FadeIn delay={400} direction="up">
-          <div className="border-t border-[#979696]/20 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-[#979696] text-sm">
-                © {new Date().getFullYear()} Maron Labs. All rights reserved. Crafted with precision.
-              </p>
-              <div className="flex gap-4">
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-[#161312] flex items-center justify-center text-[#979696] hover:bg-[#cc5500] hover:text-[#f9f8f9] transition-all hover:scale-110 hover:-translate-y-1"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="w-4 h-4" />
-                </a>
-                <a
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-[#161312] flex items-center justify-center text-[#979696] hover:bg-[#cc5500] hover:text-[#f9f8f9] transition-all hover:scale-110 hover:-translate-y-1"
-                  aria-label="Twitter"
-                >
-                  <Twitter className="w-4 h-4" />
-                </a>
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-[#161312] flex items-center justify-center text-[#979696] hover:bg-[#cc5500] hover:text-[#f9f8f9] transition-all hover:scale-110 hover:-translate-y-1"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="w-4 h-4" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </FadeIn>
-
-        {/* Credits */}
-        <ScaleIn delay={500}>
-          <div className="text-center mt-8 pt-4 border-t border-[#979696]/10">
-            <p className="text-[#979696]/50 text-xs">
-              Designed & Developed by <span className="text-[#cc5500]">Maron Labs</span>
-            </p>
-          </div>
-        </ScaleIn>
+        {/* Bottom Bar */}
+        <div className="border-t border-[#f9f8f9]/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-[10px] uppercase tracking-[0.3em] text-[#f9f8f9]/20">
+            © {new Date().getFullYear()} Maron Labs. All rights reserved.
+          </p>
+          <p className="text-[10px] uppercase tracking-[0.3em] text-[#f9f8f9]/20">
+            Designed & Developed by <span className="text-[#cc5500]/60">Maron Labs</span>
+          </p>
+        </div>
       </div>
 
-      {/* Back to Top Button */}
+      {/* Back to Top Button - refined */}
       <button
         onClick={scrollToTop}
-        className="fixed bottom-6 right-6 w-12 h-12 bg-[#cc5500] text-[#f9f8f9] rounded-full shadow-lg hover:bg-[#a83f00] transition-all hover:scale-110 flex items-center justify-center z-40"
+        className="fixed bottom-6 right-6 w-10 h-10 border border-[#f9f8f9]/10 bg-[#161312] text-[#f9f8f9]/50 hover:border-[#cc5500] hover:text-[#cc5500] transition-all duration-300 flex items-center justify-center z-40"
         aria-label="Back to top"
       >
-        <ArrowUp className="w-5 h-5" />
+        <ArrowUp className="w-4 h-4" />
       </button>
     </footer>
   )

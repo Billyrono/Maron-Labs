@@ -6,25 +6,29 @@ import Image from "next/image"
 export default function PageLoader() {
     const [isLoading, setIsLoading] = useState(true)
     const [progress, setProgress] = useState(0)
+    const [isFadingOut, setIsFadingOut] = useState(false)
 
     useEffect(() => {
-        // Simulate loading progress
+        // Slower loading progress for a more cinematic feel
         const interval = setInterval(() => {
             setProgress((prev) => {
                 if (prev >= 100) {
                     clearInterval(interval)
-                    setTimeout(() => setIsLoading(false), 300)
+                    setIsFadingOut(true)
+                    setTimeout(() => setIsLoading(false), 800)
                     return 100
                 }
-                return prev + Math.random() * 30
+                // Slower increment
+                return prev + Math.random() * 8
             })
-        }, 100)
+        }, 150)
 
-        // Fallback: hide loader after 2 seconds max
+        // Fallback: hide loader after ~3.5 seconds max
         const timeout = setTimeout(() => {
             setProgress(100)
-            setTimeout(() => setIsLoading(false), 300)
-        }, 2000)
+            setIsFadingOut(true)
+            setTimeout(() => setIsLoading(false), 800)
+        }, 3500)
 
         return () => {
             clearInterval(interval)
@@ -36,31 +40,38 @@ export default function PageLoader() {
 
     return (
         <div
-            className={`fixed inset-0 z-[100] bg-[#161312] flex flex-col items-center justify-center transition-opacity duration-500 ${progress >= 100 ? "opacity-0 pointer-events-none" : "opacity-100"
-                }`}
+            className={`fixed inset-0 z-[100] bg-[#000000] flex flex-col items-center justify-center transition-all duration-1000 ${
+                isFadingOut ? "opacity-0 pointer-events-none" : "opacity-100"
+            }`}
         >
             {/* Logo */}
-            <div className="mb-8 animate-pulse">
-                <Image
-                    src="/logos/Maron Labs Black background Logo.svg"
-                    alt="Maron Labs"
-                    width={200}
-                    height={60}
-                    className="h-16 w-auto"
-                    priority
-                />
+            <div className={`relative flex flex-col items-center justify-center transition-transform duration-1000 ease-out ${
+                isFadingOut ? "scale-105" : "scale-100"
+            }`}>
+                <div className="mb-6 opacity-80 animate-wave">
+                    <Image
+                        src="/logos/Maron Labs Black background Logo.svg"
+                        alt="Maron Labs"
+                        width={280}
+                        height={70}
+                        className="h-14 w-auto object-contain"
+                        priority
+                    />
+                </div>
+                
+                {/* Minimalist Line Progress */}
+                <div className="w-64 h-[1px] bg-[#f9f8f9]/10 overflow-hidden mt-4">
+                    <div
+                        className="h-full bg-[#cc5500] transition-all duration-300 ease-out"
+                        style={{ width: `${Math.min(progress, 100)}%` }}
+                    />
+                </div>
+                
+                {/* Percentage */}
+                <p className="mt-6 text-[10px] text-[#f9f8f9]/40 uppercase tracking-[0.3em] font-medium">
+                    {Math.floor(Math.min(progress, 100))}%
+                </p>
             </div>
-
-            {/* Progress Bar */}
-            <div className="w-48 h-1 bg-[#979696]/30 rounded-full overflow-hidden">
-                <div
-                    className="h-full bg-gradient-to-r from-[#cc5500] to-[#fee2b2] transition-all duration-300"
-                    style={{ width: `${Math.min(progress, 100)}%` }}
-                />
-            </div>
-
-            {/* Loading Text */}
-            <p className="mt-4 text-[#979696] text-sm">Loading...</p>
         </div>
     )
 }

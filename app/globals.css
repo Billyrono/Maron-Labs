@@ -85,7 +85,8 @@
 
 @theme inline {
   /* optional: --font-sans, --font-serif, --font-mono if they are applied in the layout.tsx */
-  --font-sans: "League Spartan", "Geist", sans-serif;
+  --font-sans: var(--font-montserrat), "Montserrat", sans-serif;
+  --font-serif: var(--font-playfair), "Playfair Display", serif;
   --font-mono: "Geist Mono", monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -138,18 +139,7 @@
     @apply bg-background text-foreground;
   }
 
-  /* Custom font families for Maron Labs */
-  [style*="--font-oswald"] {
-    --font-oswald: "Oswald", sans-serif;
-  }
-
-  [style*="--font-yellowtail"] {
-    --font-yellowtail: "Yellowtail", cursive;
-  }
-
-  [style*="--font-league-spartan"] {
-    --font-league-spartan: "League Spartan", sans-serif;
-  }
+  /* Custom font families removed for V2 */
 
   /* Custom select dropdown styling */
   select {
@@ -184,6 +174,20 @@
 
 .animate-bounce-subtle {
   animation: bounce-subtle 3s ease-in-out infinite;
+}
+
+/* Elegant wave float animation for the loader logo */
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-wave {
+  animation: wave 3s ease-in-out infinite;
 }
 
 /* Slide up animation for cookie consent */

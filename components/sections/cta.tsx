@@ -1,104 +1,105 @@
 import { Phone, Mail, MapPin, Globe, MessageCircle } from "lucide-react"
-import { FadeIn, ScaleIn } from "@/components/scroll-animations"
+import { FadeIn } from "@/components/scroll-animations"
 
 export default function CTA() {
   return (
-    <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#161312] relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#cc5500]/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#fee2b2]/10 rounded-full blur-3xl" />
+    <section id="contact" className="py-32 px-4 sm:px-6 lg:px-8 bg-[#161312] relative overflow-hidden">
+      {/* Subtle decorative gradient orbs */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#cc5500]/5 rounded-full blur-[120px]" />
+      <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#fee2b2]/5 rounded-full blur-[100px]" />
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <FadeIn>
-          <p className="text-[#cc5500] mb-4 font-medium" style={{ fontFamily: "Yellowtail" }}>
-            Ready to Get Started?
+          <p className="text-[11px] uppercase tracking-[0.5em] text-[#cc5500] mb-4">
+            Get In Touch
           </p>
-          <h2
-            className="text-4xl sm:text-5xl font-black text-[#f9f8f9] mb-6 text-balance"
-            style={{ fontFamily: "Oswald" }}
-          >
-            Ready to Transform Your <span className="text-[#cc5500]">Digital Vision?</span>
+          <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-[#f9f8f9] mb-8 tracking-tight">
+            Ready to Transform Your{" "}
+            <span className="italic text-[#cc5500]">Digital Vision?</span>
           </h2>
+          <div className="w-16 h-[1px] bg-[#cc5500] mx-auto mb-8" />
 
-          <p className="text-lg text-[#fee2b2] mb-10 max-w-2xl mx-auto leading-relaxed">
-            Let's collaborate and create something exceptional. Whether you're starting fresh or scaling up, we're here to
-            help. We'd love to hear from you!
+          <p className="text-base text-[#f9f8f9]/50 mb-14 max-w-2xl mx-auto leading-relaxed tracking-wide">
+            Let&apos;s collaborate and create something exceptional. Whether you&apos;re starting fresh or scaling up, we&apos;re here to help.
           </p>
         </FadeIn>
 
         <FadeIn delay={200}>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20">
             <a
               href="mailto:hello@maronlabs.com?subject=Project%20Inquiry"
-              className="px-8 py-4 bg-[#cc5500] text-[#f9f8f9] rounded font-bold hover:bg-[#fee2b2] hover:text-[#161312] transition text-lg inline-flex items-center justify-center gap-2 hover:scale-105"
+              className="group px-10 py-4 bg-[#cc5500] text-[#f9f8f9] text-[13px] uppercase tracking-[0.25em] font-medium hover:bg-[#a83f00] transition-all duration-500 inline-flex items-center justify-center gap-3"
             >
-              <Mail className="w-5 h-5" />
+              <Mail className="w-4 h-4" />
               Get Started
+              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 12h14m-7-7 7 7-7 7" />
+              </svg>
             </a>
             <a
               href="https://wa.me/254700270670"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 border-2 border-[#cc5500] text-[#cc5500] rounded font-bold hover:bg-[#cc5500] hover:text-[#f9f8f9] transition text-lg inline-flex items-center justify-center gap-2 hover:scale-105"
+              className="px-10 py-4 border border-[#f9f8f9]/20 text-[#f9f8f9] text-[13px] uppercase tracking-[0.25em] font-medium hover:border-[#f9f8f9]/60 hover:bg-[#f9f8f9]/5 transition-all duration-500 inline-flex items-center justify-center gap-3"
             >
-              <MessageCircle className="w-5 h-5" />
+              <MessageCircle className="w-4 h-4" />
               WhatsApp Us
             </a>
           </div>
         </FadeIn>
 
-        {/* Contact Info */}
-        <div className="pt-12 border-t border-[#979696]/30 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          <ScaleIn delay={300}>
+        {/* Contact Info - refined elegant grid */}
+        <div className="pt-16 border-t border-[#f9f8f9]/5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <FadeIn delay={300}>
             <a
               href="tel:+254700270670"
-              className="group block p-6 rounded-lg hover:bg-[#000000]/30 transition"
+              className="group block p-6 hover:bg-[#f9f8f9]/[0.02] transition-all duration-500"
             >
-              <div className="w-12 h-12 bg-[#cc5500] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                <Phone className="w-5 h-5 text-[#f9f8f9]" />
+              <div className="w-10 h-10 border border-[#cc5500]/30 flex items-center justify-center mx-auto mb-5 group-hover:border-[#cc5500] transition-colors duration-500">
+                <Phone className="w-4 h-4 text-[#cc5500]" />
               </div>
-              <p className="text-[#979696] text-sm mb-1">Phone</p>
-              <p className="text-[#f9f8f9] font-bold">+254 700 270 670</p>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-[#979696] mb-2">Phone</p>
+              <p className="text-sm text-[#f9f8f9] tracking-wide">+254 700 270 670</p>
             </a>
-          </ScaleIn>
+          </FadeIn>
 
-          <ScaleIn delay={400}>
+          <FadeIn delay={400}>
             <a
               href="mailto:hello@maronlabs.com"
-              className="group block p-6 rounded-lg hover:bg-[#000000]/30 transition"
+              className="group block p-6 hover:bg-[#f9f8f9]/[0.02] transition-all duration-500"
             >
-              <div className="w-12 h-12 bg-[#cc5500] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                <Mail className="w-5 h-5 text-[#f9f8f9]" />
+              <div className="w-10 h-10 border border-[#cc5500]/30 flex items-center justify-center mx-auto mb-5 group-hover:border-[#cc5500] transition-colors duration-500">
+                <Mail className="w-4 h-4 text-[#cc5500]" />
               </div>
-              <p className="text-[#979696] text-sm mb-1">Email</p>
-              <p className="text-[#f9f8f9] font-bold">hello@maronlabs.com</p>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-[#979696] mb-2">Email</p>
+              <p className="text-sm text-[#f9f8f9] tracking-wide">hello@maronlabs.com</p>
             </a>
-          </ScaleIn>
+          </FadeIn>
 
-          <ScaleIn delay={500}>
+          <FadeIn delay={500}>
             <a
               href="https://www.maronlabs.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="group block p-6 rounded-lg hover:bg-[#000000]/30 transition"
+              className="group block p-6 hover:bg-[#f9f8f9]/[0.02] transition-all duration-500"
             >
-              <div className="w-12 h-12 bg-[#cc5500] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                <Globe className="w-5 h-5 text-[#f9f8f9]" />
+              <div className="w-10 h-10 border border-[#cc5500]/30 flex items-center justify-center mx-auto mb-5 group-hover:border-[#cc5500] transition-colors duration-500">
+                <Globe className="w-4 h-4 text-[#cc5500]" />
               </div>
-              <p className="text-[#979696] text-sm mb-1">Website</p>
-              <p className="text-[#f9f8f9] font-bold">www.maronlabs.com</p>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-[#979696] mb-2">Website</p>
+              <p className="text-sm text-[#f9f8f9] tracking-wide">www.maronlabs.com</p>
             </a>
-          </ScaleIn>
+          </FadeIn>
 
-          <ScaleIn delay={600}>
-            <div className="p-6 rounded-lg">
-              <div className="w-12 h-12 bg-[#cc5500] rounded-full flex items-center justify-center mx-auto mb-4">
-                <MapPin className="w-5 h-5 text-[#f9f8f9]" />
+          <FadeIn delay={600}>
+            <div className="p-6">
+              <div className="w-10 h-10 border border-[#cc5500]/30 flex items-center justify-center mx-auto mb-5">
+                <MapPin className="w-4 h-4 text-[#cc5500]" />
               </div>
-              <p className="text-[#979696] text-sm mb-1">Location</p>
-              <p className="text-[#f9f8f9] font-bold">Nairobi, Kenya</p>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-[#979696] mb-2">Location</p>
+              <p className="text-sm text-[#f9f8f9] tracking-wide">Nairobi, Kenya</p>
             </div>
-          </ScaleIn>
+          </FadeIn>
         </div>
       </div>
     </section>

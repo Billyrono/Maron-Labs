@@ -1,7 +1,6 @@
 "use client"
 
 import Image from "next/image"
-import { Quote } from "lucide-react"
 import { FadeIn } from "@/components/scroll-animations"
 
 const testimonials = [
@@ -27,49 +26,47 @@ const testimonials = [
 
 export default function Testimonials() {
     return (
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#161312]">
+        <section className="py-32 px-4 sm:px-6 lg:px-8 bg-[#161312]">
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
                 <FadeIn>
-                    <div className="text-center mb-16">
-                        <p className="text-[#cc5500] mb-4 text-lg" style={{ fontFamily: "Yellowtail" }}>
-                            What Our Clients Say
+                    <div className="text-center mb-20">
+                        <p className="text-[11px] uppercase tracking-[0.5em] text-[#cc5500] mb-4">
+                            Testimonials
                         </p>
-                        <h2 className="text-3xl sm:text-4xl font-black text-[#f9f8f9]" style={{ fontFamily: "Oswald" }}>
-                            Client Testimonials
+                        <h2 className="font-serif text-4xl sm:text-5xl font-normal text-[#f9f8f9] tracking-tight mb-6">
+                            What Our Clients Say
                         </h2>
+                        <div className="w-16 h-[1px] bg-[#cc5500] mx-auto" />
                     </div>
                 </FadeIn>
 
                 {/* Testimonials Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                     {testimonials.map((testimonial, index) => (
                         <FadeIn key={index} delay={index * 150}>
-                            <div className="bg-[#1f1d1c] rounded-lg p-8 relative group hover:bg-[#2a2726] transition-all duration-300">
-                                {/* Quote Icon */}
-                                <Quote className="w-10 h-10 text-[#cc5500] mb-6 opacity-50" />
+                            <div className="relative p-10 border border-[#f9f8f9]/5 hover:border-[#cc5500]/20 transition-all duration-700 group">
+                                {/* Thin accent line at top */}
+                                <div className="absolute top-0 left-8 w-8 h-[1px] bg-[#cc5500]" />
 
                                 {/* Quote Text */}
-                                <p className="text-[#f9f8f9]/80 mb-8 leading-relaxed italic">
-                                    "{testimonial.quote}"
+                                <p className="font-serif text-[#f9f8f9]/70 mb-10 leading-[1.9] italic text-lg tracking-wide">
+                                    &ldquo;{testimonial.quote}&rdquo;
                                 </p>
 
                                 {/* Author Info */}
                                 <div className="flex items-center gap-4">
-                                    {/* Avatar */}
-                                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#cc5500] to-[#a83f00] flex items-center justify-center">
-                                        <span className="text-[#f9f8f9] font-bold text-sm">
+                                    {/* Avatar - simple elegant circle */}
+                                    <div className="w-10 h-10 border border-[#cc5500]/40 flex items-center justify-center">
+                                        <span className="text-[#cc5500] text-[11px] font-medium tracking-wider">
                                             {testimonial.avatar}
                                         </span>
                                     </div>
                                     <div>
-                                        <p className="font-bold text-[#f9f8f9]">{testimonial.author}</p>
-                                        <p className="text-sm text-[#979696]">{testimonial.role}</p>
+                                        <p className="text-[12px] uppercase tracking-[0.2em] text-[#f9f8f9] font-medium">{testimonial.author}</p>
+                                        <p className="text-[11px] uppercase tracking-[0.15em] text-[#979696] mt-0.5">{testimonial.role}</p>
                                     </div>
                                 </div>
-
-                                {/* Decorative Border */}
-                                <div className="absolute bottom-0 left-0 w-0 h-1 bg-[#cc5500] group-hover:w-full transition-all duration-500 rounded-b-lg" />
                             </div>
                         </FadeIn>
                     ))}

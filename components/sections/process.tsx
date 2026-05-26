@@ -25,36 +25,35 @@ export default function Process() {
   ]
 
   return (
-    <section id="process" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#ffffff]">
+    <section id="process" className="py-32 px-4 sm:px-6 lg:px-8 bg-[#f9f8f9]">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <FadeIn>
-          <div className="text-center mb-16">
-            <h2
-              className="text-4xl sm:text-5xl font-black text-[#000000] mb-4 text-balance"
-              style={{ fontFamily: "Oswald" }}
-            >
+          <div className="text-center mb-20">
+            <p className="text-[11px] uppercase tracking-[0.5em] text-[#cc5500] mb-4">
+              How We Work
+            </p>
+            <h2 className="font-serif text-4xl sm:text-5xl font-normal text-[#161312] tracking-tight mb-6">
               Our Process
             </h2>
-            <p className="text-lg text-[#161312]">A proven methodology for delivering exceptional results</p>
+            <div className="w-16 h-[1px] bg-[#cc5500] mx-auto mb-6" />
+            <p className="text-base text-[#979696] tracking-wide">A proven methodology for delivering exceptional results</p>
           </div>
         </FadeIn>
 
         {/* Process Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0">
           {steps.map((step, index) => (
             <FadeIn key={index} delay={index * 100}>
-              <div className="relative h-full">
-                <div className="p-8 bg-[#f9f8f9] rounded border-l-4 border-[#cc5500] h-full hover:shadow-lg transition-shadow">
-                  <p className="text-5xl font-black text-[#cc5500] mb-4" style={{ fontFamily: "Oswald" }}>
+              <div className="relative h-full group">
+                <div className="p-10 border-r border-[#161312]/5 last:border-r-0 h-full transition-all duration-500 group-hover:bg-[#161312] text-center">
+                  <p className="font-serif text-6xl text-[#cc5500]/20 mb-6 group-hover:text-[#cc5500]/40 transition-colors duration-500">
                     {step.number}
                   </p>
-                  <h3 className="text-xl font-bold text-[#000000] mb-3">{step.title}</h3>
-                  <p className="text-[#161312] text-sm leading-relaxed">{step.description}</p>
+                  <h3 className="font-serif text-xl text-[#161312] mb-4 tracking-wide group-hover:text-[#f9f8f9] transition-colors duration-500">{step.title}</h3>
+                  <div className="w-8 h-[1px] bg-[#cc5500] mx-auto mb-4" />
+                  <p className="text-sm text-[#979696] leading-[1.8] group-hover:text-[#f9f8f9]/60 transition-colors duration-500">{step.description}</p>
                 </div>
-                {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 bg-[#cc5500] rounded-full border-2 border-[#f9f8f9]"></div>
-                )}
               </div>
             </FadeIn>
           ))}

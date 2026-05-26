@@ -1,14 +1,11 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono, League_Spartan, Yellowtail, Oswald } from "next/font/google"
+import { Playfair_Display, Montserrat } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
-const _leagueSpartan = League_Spartan({ subsets: ["latin"], variable: "--font-league-spartan" })
-const _yellowtail = Yellowtail({ weight: "400", subsets: ["latin"], variable: "--font-yellowtail" })
-const _oswald = Oswald({ subsets: ["latin"], variable: "--font-oswald" })
+const _playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" })
+const _montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat" })
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://maronlabs.com"),
@@ -113,7 +110,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className={`font-sans antialiased overflow-x-hidden ${_leagueSpartan.variable} ${_yellowtail.variable} ${_oswald.variable}`}>
+      <body className={`font-sans antialiased overflow-x-hidden ${_playfair.variable} ${_montserrat.variable}`}>
         {children}
         <CookieConsent />
         <Analytics />

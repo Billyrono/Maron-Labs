@@ -99,13 +99,13 @@ export default function Services() {
     setCurrentIndex(0)
   }, [itemsPerView])
 
-  // Auto-scroll every 4 seconds (not too fast)
+  // Auto-scroll every 5 seconds (slower for luxury)
   useEffect(() => {
     if (isPaused) return
 
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % services.length)
-    }, 4000)
+    }, 5000)
 
     return () => clearInterval(interval)
   }, [isPaused])
@@ -147,22 +147,20 @@ export default function Services() {
   const translateX = (currentIndex % services.length) * slidePercentage
 
   return (
-    <section id="services" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#ffffff]">
+    <section id="services" className="py-32 px-4 sm:px-6 lg:px-8 bg-[#f9f8f9]">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <FadeIn>
-          <div className="text-center mb-16">
-            <p className="text-[#cc5500] mb-4 font-medium" style={{ fontFamily: "Yellowtail" }}>
+          <div className="text-center mb-20">
+            <p className="text-[11px] uppercase tracking-[0.5em] text-[#cc5500] mb-4">
               What We Offer
             </p>
-            <h2
-              className="text-4xl sm:text-5xl font-black text-[#000000] mb-4 text-balance"
-              style={{ fontFamily: "Oswald" }}
-            >
+            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-[#161312] mb-6 tracking-tight">
               Our Services
             </h2>
-            <p className="text-lg text-[#161312] max-w-2xl mx-auto">
-              Comprehensive digital solutions tailored to your business needs
+            <div className="w-16 h-[1px] bg-[#cc5500] mx-auto mb-6" />
+            <p className="text-base text-[#979696] max-w-2xl mx-auto leading-relaxed tracking-wide">
+              Comprehensive digital solutions tailored to elevate your brand
             </p>
           </div>
         </FadeIn>
@@ -178,7 +176,7 @@ export default function Services() {
         >
           <div className="overflow-hidden">
             <div
-              className="flex transition-transform duration-700 ease-in-out"
+              className="flex transition-transform duration-1000 ease-in-out"
               style={{ transform: `translateX(-${translateX}%)` }}
             >
               {/* Render all services for smooth infinite scroll */}
@@ -187,20 +185,20 @@ export default function Services() {
                 return (
                   <div
                     key={index}
-                    className="flex-shrink-0 px-3"
+                    className="flex-shrink-0 px-4"
                     style={{ width: `${slidePercentage}%` }}
                   >
-                    <div className="group p-8 bg-[#f9f8f9] border-2 border-transparent hover:border-[#cc5500] rounded-lg transition-all duration-300 hover:shadow-xl h-full">
-                      <div className="w-14 h-14 bg-[#cc5500] rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <IconComponent className="w-7 h-7 text-[#f9f8f9]" />
+                    <div className="group p-10 bg-[#ffffff] border border-[#161312]/5 hover:border-[#cc5500]/30 transition-all duration-500 h-full hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)]">
+                      <div className="w-12 h-12 border border-[#cc5500]/30 flex items-center justify-center mb-8 group-hover:bg-[#cc5500] group-hover:border-[#cc5500] transition-all duration-500">
+                        <IconComponent className="w-5 h-5 text-[#cc5500] group-hover:text-[#f9f8f9] transition-colors duration-500" />
                       </div>
-                      <h3 className="text-xl font-bold text-[#000000] mb-3">{service.title}</h3>
-                      <p className="text-[#161312] leading-relaxed mb-4">{service.description}</p>
+                      <h3 className="font-serif text-xl text-[#161312] mb-4 tracking-wide">{service.title}</h3>
+                      <p className="text-sm text-[#979696] leading-[1.8] mb-6">{service.description}</p>
                       <div className="flex flex-wrap gap-2">
                         {service.features.map((feature, idx) => (
                           <span
                             key={idx}
-                            className="text-xs px-2 py-1 bg-[#fee2b2] text-[#161312] rounded"
+                            className="text-[10px] uppercase tracking-widest px-3 py-1 border border-[#161312]/10 text-[#979696]"
                           >
                             {feature}
                           </span>
@@ -213,45 +211,45 @@ export default function Services() {
             </div>
           </div>
 
-          {/* Navigation Buttons */}
+          {/* Navigation Buttons - refined */}
           <button
             onClick={handlePrevious}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-14 p-2 md:p-3 bg-[#f9f8f9] hover:bg-[#fee2b2] rounded-full transition shadow-lg border border-[#979696]/20 z-10"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-14 p-3 border border-[#161312]/10 hover:border-[#cc5500] hover:text-[#cc5500] text-[#161312] transition-all duration-300 z-10 bg-[#f9f8f9]"
             aria-label="Previous services"
           >
-            <ChevronLeft className="w-4 h-4 md:w-5 md:h-5 text-[#cc5500]" />
+            <ChevronLeft className="w-4 h-4" />
           </button>
 
           <button
             onClick={handleNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-14 p-2 md:p-3 bg-[#f9f8f9] hover:bg-[#fee2b2] rounded-full transition shadow-lg border border-[#979696]/20 z-10"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-14 p-3 border border-[#161312]/10 hover:border-[#cc5500] hover:text-[#cc5500] text-[#161312] transition-all duration-300 z-10 bg-[#f9f8f9]"
             aria-label="Next services"
           >
-            <ChevronRight className="w-4 h-4 md:w-5 md:h-5 text-[#cc5500]" />
+            <ChevronRight className="w-4 h-4" />
           </button>
         </div>
 
-        {/* Dots Indicator */}
-        <div className="flex justify-center gap-2 mt-8">
+        {/* Elegant line indicators */}
+        <div className="flex justify-center gap-3 mt-12">
           {services.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentIndex ? "bg-[#cc5500] w-6" : "bg-[#979696]/50 hover:bg-[#cc5500]/50"
+              className={`h-[2px] rounded-full transition-all duration-500 ${index === currentIndex ? "bg-[#cc5500] w-10" : "bg-[#161312]/15 w-4 hover:bg-[#cc5500]/40"
                 }`}
               aria-label={`Go to service ${index + 1}`}
             />
           ))}
         </div>
 
-        {/* View All Services CTA */}
-        <div className="text-center mt-12">
+        {/* View All Services CTA - refined */}
+        <div className="text-center mt-16">
           <a
-            href="#contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#cc5500] text-[#f9f8f9] rounded font-bold hover:bg-[#a83f00] transition"
+            href="/contact"
+            className="group inline-flex items-center gap-3 px-10 py-4 border border-[#161312] text-[#161312] text-[13px] uppercase tracking-[0.25em] font-medium hover:bg-[#161312] hover:text-[#f9f8f9] transition-all duration-500"
           >
             Discuss Your Project
-            <ChevronRight className="w-5 h-5" />
+            <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
           </a>
         </div>
       </div>
