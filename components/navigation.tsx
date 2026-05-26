@@ -120,10 +120,9 @@ export default function Navigation() {
         </div>
       </div>
 
-      {/* Mobile Navigation Dropdown */}
       <div 
-        className={`lg:hidden absolute top-full left-0 w-full bg-[#000000]/95 backdrop-blur-2xl border-b border-[#f9f8f9]/10 transition-all duration-700 overflow-hidden ${
-            isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+        className={`lg:hidden absolute top-full left-0 w-full bg-[#000000]/95 backdrop-blur-2xl border-b border-[#f9f8f9]/10 transition-all duration-700 ${
+            isOpen ? "max-h-[calc(100vh-4rem)] overflow-y-auto opacity-100" : "max-h-0 overflow-hidden opacity-0"
         }`}
       >
         <div className="px-6 py-8 flex flex-col gap-6">

@@ -115,7 +115,7 @@ export default function TeamPage() {
                                                     src={member.image}
                                                     alt={member.name}
                                                     fill
-                                                    className="object-cover object-center filter grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
+                                                    className="object-cover object-center filter grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105 group-active:grayscale-0 group-active:scale-105"
                                                 />
                                             ) : (
                                                 <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#161312] to-[#000000]">

@@ -188,7 +188,7 @@ export default function PortfolioPage() {
                                                 src={project.image}
                                                 alt={project.title}
                                                 fill
-                                                className="object-cover filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000"
+                                                className="object-cover filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 group-active:grayscale-0 group-active:opacity-100 group-active:scale-105 transition-all duration-1000"
                                             />
                                         </a>
                                         <div className="absolute top-4 left-4 z-10">
