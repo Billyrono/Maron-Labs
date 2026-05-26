@@ -183,7 +183,7 @@ export default function Services() {
                         {service.features.map((feature, idx) => (
                           <span
                             key={idx}
-                            className="text-[10px] uppercase tracking-widest px-3 py-1 border border-[#161312]/10 text-[#979696]"
+                            className="text-[9px] uppercase tracking-widest px-3 py-1.5 bg-[#f9f8f9] border border-[#161312]/15 text-[#161312]/70 font-medium group-hover:border-[#cc5500]/40 group-hover:bg-[#cc5500]/5 group-hover:text-[#cc5500] transition-all duration-500"
                           >
                             {feature}
                           </span>
