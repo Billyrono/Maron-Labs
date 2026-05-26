@@ -47,7 +47,7 @@ export default function PrivacyPage() {
                     </FadeIn>
 
                     <div className="space-y-12">
-                        {/* 1. Introduction */}
+                        {/* 01. Introduction */}
                         <FadeIn delay={100}>
                             <div className="group border border-[#f9f8f9]/5 p-8 md:p-12 hover:border-[#cc5500]/50 transition-colors duration-500 bg-[#161312]/30">
                                 <div className="flex items-baseline gap-6 mb-8">
@@ -68,7 +68,7 @@ export default function PrivacyPage() {
                             </div>
                         </FadeIn>
 
-                        {/* 2. Information We Collect */}
+                        {/* 02. Information We Collect */}
                         <FadeIn delay={200}>
                             <div className="group border border-[#f9f8f9]/5 p-8 md:p-12 hover:border-[#cc5500]/50 transition-colors duration-500 bg-[#161312]/30">
                                 <div className="flex items-baseline gap-6 mb-8">
@@ -111,7 +111,7 @@ export default function PrivacyPage() {
                             </div>
                         </FadeIn>
 
-                        {/* 3. How We Use Information */}
+                        {/* 03. How We Use Information */}
                         <FadeIn delay={300}>
                             <div className="group border border-[#f9f8f9]/5 p-8 md:p-12 hover:border-[#cc5500]/50 transition-colors duration-500 bg-[#161312]/30">
                                 <div className="flex items-baseline gap-6 mb-8">
@@ -138,7 +138,7 @@ export default function PrivacyPage() {
                             </div>
                         </FadeIn>
 
-                        {/* 4. Information Sharing */}
+                        {/* 04. Information Sharing */}
                         <FadeIn delay={400}>
                             <div className="group border border-[#f9f8f9]/5 p-8 md:p-12 hover:border-[#cc5500]/50 transition-colors duration-500 bg-[#161312]/30">
                                 <div className="flex items-baseline gap-6 mb-8">
@@ -165,17 +165,30 @@ export default function PrivacyPage() {
                             </div>
                         </FadeIn>
 
-                        {/* 5. Data Security & Retention */}
+                        {/* 05. Data Security */}
                         <FadeIn delay={500}>
                             <div className="group border border-[#f9f8f9]/5 p-8 md:p-12 hover:border-[#cc5500]/50 transition-colors duration-500 bg-[#161312]/30">
                                 <div className="flex items-baseline gap-6 mb-8">
                                     <span className="font-serif text-4xl italic text-[#cc5500]">05</span>
-                                    <h2 className="text-sm uppercase tracking-[0.2em] font-medium text-[#f9f8f9]">Security & Retention</h2>
+                                    <h2 className="text-sm uppercase tracking-[0.2em] font-medium text-[#f9f8f9]">Data Security</h2>
+                                </div>
+                                <div className="space-y-6 text-sm text-[#979696] leading-[1.8] tracking-wide">
+                                    <p>We implement robust technical and organizational measures to protect your personal data from unauthorized access, loss, misuse, or alteration.</p>
+                                    <p>This includes SSL/TLS encryption for data in transit, secure server infrastructure, and strict internal access protocols. However, please be aware that no method of transmission over the Internet or method of electronic storage is 100% secure, and we cannot guarantee its absolute security.</p>
+                                </div>
+                            </div>
+                        </FadeIn>
+
+                        {/* 06. Data Retention */}
+                        <FadeIn delay={600}>
+                            <div className="group border border-[#f9f8f9]/5 p-8 md:p-12 hover:border-[#cc5500]/50 transition-colors duration-500 bg-[#161312]/30">
+                                <div className="flex items-baseline gap-6 mb-8">
+                                    <span className="font-serif text-4xl italic text-[#cc5500]">06</span>
+                                    <h2 className="text-sm uppercase tracking-[0.2em] font-medium text-[#f9f8f9]">Data Retention</h2>
                                 </div>
                                 <div className="space-y-8 text-sm text-[#979696] leading-[1.8] tracking-wide">
-                                    <p>We implement technical and organizational measures to protect your data, including SSL/TLS encryption, secure storage, and limited internal access.</p>
+                                    <p>We retain your personal information only for as long as is necessary for the purposes set out in this Privacy Policy, or as required by law.</p>
                                     <div className="p-6 border border-[#f9f8f9]/5 bg-[#000000]">
-                                        <h3 className="text-xs uppercase tracking-[0.2em] text-[#f9f8f9] mb-4">Retention Periods</h3>
                                         <ul className="space-y-4">
                                             <li className="flex justify-between items-center border-b border-[#f9f8f9]/5 pb-2">
                                                 <span className="text-[#cc5500]">Inquiry Data</span>
@@ -183,11 +196,11 @@ export default function PrivacyPage() {
                                             </li>
                                             <li className="flex justify-between items-center border-b border-[#f9f8f9]/5 pb-2">
                                                 <span className="text-[#cc5500]">Client Projects</span>
-                                                <span className="text-right">7 years (legal/tax)</span>
+                                                <span className="text-right">7 years (legal/tax purposes)</span>
                                             </li>
                                             <li className="flex justify-between items-center border-b border-[#f9f8f9]/5 pb-2">
                                                 <span className="text-[#cc5500]">Newsletters</span>
-                                                <span className="text-right">Until unsubscribe</span>
+                                                <span className="text-right">Until you unsubscribe</span>
                                             </li>
                                             <li className="flex justify-between items-center">
                                                 <span className="text-[#cc5500]">Analytics</span>
@@ -199,15 +212,15 @@ export default function PrivacyPage() {
                             </div>
                         </FadeIn>
 
-                        {/* 6. Your Rights */}
-                        <FadeIn delay={600}>
+                        {/* 07. Your Rights */}
+                        <FadeIn delay={700}>
                             <div className="group border border-[#f9f8f9]/5 p-8 md:p-12 hover:border-[#cc5500]/50 transition-colors duration-500 bg-[#161312]/30">
                                 <div className="flex items-baseline gap-6 mb-8">
-                                    <span className="font-serif text-4xl italic text-[#cc5500]">06</span>
+                                    <span className="font-serif text-4xl italic text-[#cc5500]">07</span>
                                     <h2 className="text-sm uppercase tracking-[0.2em] font-medium text-[#f9f8f9]">Your Rights</h2>
                                 </div>
                                 <div className="space-y-6 text-sm text-[#979696] leading-[1.8] tracking-wide">
-                                    <p>You maintain the following rights regarding your personal data:</p>
+                                    <p>Depending on your location and applicable data protection laws, you may have the following rights regarding your personal data:</p>
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
                                         {[
                                             { t: "Access", d: "Request a copy of your data" },
@@ -226,15 +239,71 @@ export default function PrivacyPage() {
                                 </div>
                             </div>
                         </FadeIn>
+
+                        {/* 08. Cookies and Tracking */}
+                        <FadeIn delay={800}>
+                            <div className="group border border-[#f9f8f9]/5 p-8 md:p-12 hover:border-[#cc5500]/50 transition-colors duration-500 bg-[#161312]/30">
+                                <div className="flex items-baseline gap-6 mb-8">
+                                    <span className="font-serif text-4xl italic text-[#cc5500]">08</span>
+                                    <h2 className="text-sm uppercase tracking-[0.2em] font-medium text-[#f9f8f9]">Cookies & Tracking</h2>
+                                </div>
+                                <div className="space-y-6 text-sm text-[#979696] leading-[1.8] tracking-wide">
+                                    <p>We use cookies and similar tracking technologies to track activity on our website and hold certain information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.</p>
+                                    <p>For more detailed information about the cookies we use and how to manage your preferences, please review our comprehensive <a href="/cookie-policy" className="text-[#cc5500] hover:text-[#f9f8f9] transition-colors duration-300">Cookie Policy</a>.</p>
+                                </div>
+                            </div>
+                        </FadeIn>
+
+                        {/* 09. Third-Party Links */}
+                        <FadeIn delay={900}>
+                            <div className="group border border-[#f9f8f9]/5 p-8 md:p-12 hover:border-[#cc5500]/50 transition-colors duration-500 bg-[#161312]/30">
+                                <div className="flex items-baseline gap-6 mb-8">
+                                    <span className="font-serif text-4xl italic text-[#cc5500]">09</span>
+                                    <h2 className="text-sm uppercase tracking-[0.2em] font-medium text-[#f9f8f9]">Third-Party Links</h2>
+                                </div>
+                                <div className="space-y-6 text-sm text-[#979696] leading-[1.8] tracking-wide">
+                                    <p>Our website may contain links to third-party websites or services that are not owned or controlled by Maron Labs.</p>
+                                    <p>We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites or services. We strongly advise you to read the privacy policy of any third-party website you visit.</p>
+                                </div>
+                            </div>
+                        </FadeIn>
+
+                        {/* 10. Children's Privacy */}
+                        <FadeIn delay={1000}>
+                            <div className="group border border-[#f9f8f9]/5 p-8 md:p-12 hover:border-[#cc5500]/50 transition-colors duration-500 bg-[#161312]/30">
+                                <div className="flex items-baseline gap-6 mb-8">
+                                    <span className="font-serif text-4xl italic text-[#cc5500]">10</span>
+                                    <h2 className="text-sm uppercase tracking-[0.2em] font-medium text-[#f9f8f9]">Children's Privacy</h2>
+                                </div>
+                                <div className="space-y-6 text-sm text-[#979696] leading-[1.8] tracking-wide">
+                                    <p>Our services are not intended for use by children under the age of 18.</p>
+                                    <p>We do not knowingly collect personally identifiable information from anyone under the age of 18. If you are a parent or guardian and you are aware that your child has provided us with personal data, please contact us. If we become aware that we have collected personal data from children without verification of parental consent, we will take steps to remove that information from our servers.</p>
+                                </div>
+                            </div>
+                        </FadeIn>
+
+                        {/* 11. Changes to This Policy */}
+                        <FadeIn delay={1100}>
+                            <div className="group border border-[#f9f8f9]/5 p-8 md:p-12 hover:border-[#cc5500]/50 transition-colors duration-500 bg-[#161312]/30">
+                                <div className="flex items-baseline gap-6 mb-8">
+                                    <span className="font-serif text-4xl italic text-[#cc5500]">11</span>
+                                    <h2 className="text-sm uppercase tracking-[0.2em] font-medium text-[#f9f8f9]">Changes to This Policy</h2>
+                                </div>
+                                <div className="space-y-6 text-sm text-[#979696] leading-[1.8] tracking-wide">
+                                    <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.</p>
+                                    <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+                                </div>
+                            </div>
+                        </FadeIn>
                         
-                        {/* 7. Contact Us */}
-                        <FadeIn delay={700}>
+                        {/* 12. Contact Us */}
+                        <FadeIn delay={1200}>
                             <div className="group border border-[#cc5500]/30 p-8 md:p-12 bg-[#161312]">
                                 <h2 className="font-serif text-3xl font-normal text-[#f9f8f9] mb-6 tracking-tight">
                                     Contact Us
                                 </h2>
                                 <p className="text-sm text-[#979696] leading-[1.8] tracking-wide mb-8">
-                                    If you have any questions about this Privacy Policy or our data practices, please contact us:
+                                    If you have any questions about this Privacy Policy, your data rights, or our practices, please contact us:
                                 </p>
                                 <div className="space-y-4 text-sm tracking-wide text-[#f9f8f9]">
                                     <p><span className="text-[#cc5500] uppercase tracking-[0.2em] text-[10px] inline-block w-24">Email</span> hello@maronlabs.com</p>
