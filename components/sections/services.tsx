@@ -199,7 +199,7 @@ export default function Services() {
           {/* Navigation Buttons - refined */}
           <button
             onClick={handlePrevious}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-14 p-3 border border-[#161312]/10 hover:border-[#cc5500] hover:text-[#cc5500] text-[#161312] transition-all duration-300 z-10 bg-[#f9f8f9]"
+            className="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 p-3 border border-[#161312]/10 hover:border-[#cc5500] hover:text-[#cc5500] text-[#161312] transition-all duration-300 z-10 bg-[#f9f8f9]"
             aria-label="Previous services"
           >
             <ChevronLeft className="w-4 h-4" />
@@ -207,7 +207,7 @@ export default function Services() {
 
           <button
             onClick={handleNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-14 p-3 border border-[#161312]/10 hover:border-[#cc5500] hover:text-[#cc5500] text-[#161312] transition-all duration-300 z-10 bg-[#f9f8f9]"
+            className="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 p-3 border border-[#161312]/10 hover:border-[#cc5500] hover:text-[#cc5500] text-[#161312] transition-all duration-300 z-10 bg-[#f9f8f9]"
             aria-label="Next services"
           >
             <ChevronRight className="w-4 h-4" />
