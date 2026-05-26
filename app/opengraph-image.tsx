@@ -18,21 +18,8 @@ export default async function Image() {
           alignItems: 'center',
           justifyContent: 'center',
           color: '#f9f8f9',
-          border: '1px solid rgba(249, 248, 249, 0.1)',
         }}
       >
-        {/* Subtle grid pattern background */}
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            backgroundImage:
-              'linear-gradient(to right, rgba(249, 248, 249, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(249, 248, 249, 0.05) 1px, transparent 1px)',
-            backgroundSize: '40px 40px',
-            opacity: 0.5,
-          }}
-        />
-
         {/* Center content container */}
         <div
           style={{
@@ -40,7 +27,7 @@ export default async function Image() {
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            background: 'rgba(22, 19, 18, 0.95)',
+            background: '#161312',
             padding: '80px 120px',
             borderTop: '1px solid rgba(249, 248, 249, 0.1)',
             borderBottom: '1px solid rgba(249, 248, 249, 0.1)',
@@ -54,35 +41,37 @@ export default async function Image() {
               height: '2px',
               background: '#cc5500',
               marginBottom: '40px',
+              display: 'flex',
             }}
           />
 
-          <h1
+          <div
             style={{
               fontSize: 100,
               fontWeight: 400,
               margin: 0,
               marginBottom: '20px',
               color: '#f9f8f9',
-              fontFamily: 'serif',
               letterSpacing: '-0.02em',
               display: 'flex',
+              alignItems: 'center',
             }}
           >
-            Maron<span style={{ color: '#cc5500', marginLeft: '20px', fontStyle: 'italic' }}>Labs</span>
-          </h1>
+            Maron<span style={{ color: '#cc5500', marginLeft: '20px' }}>Labs</span>
+          </div>
 
-          <p
+          <div
             style={{
               fontSize: 24,
               margin: 0,
               letterSpacing: '0.3em',
               textTransform: 'uppercase',
               color: '#979696',
+              display: 'flex',
             }}
           >
             Premium Tech & Digital Solutions
-          </p>
+          </div>
 
           <div
             style={{
@@ -95,13 +84,13 @@ export default async function Image() {
               color: '#cc5500',
             }}
           >
-            <span>Systems</span>
-            <span>•</span>
-            <span>AI</span>
-            <span>•</span>
-            <span>Hardware</span>
-            <span>•</span>
-            <span>Digital</span>
+            <span style={{ display: 'flex' }}>Systems</span>
+            <span style={{ display: 'flex' }}>•</span>
+            <span style={{ display: 'flex' }}>AI</span>
+            <span style={{ display: 'flex' }}>•</span>
+            <span style={{ display: 'flex' }}>Hardware</span>
+            <span style={{ display: 'flex' }}>•</span>
+            <span style={{ display: 'flex' }}>Digital</span>
           </div>
         </div>
       </div>
