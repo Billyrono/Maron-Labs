@@ -108,7 +108,7 @@ const projects = [
         description: "A stunning travel and tourism website showcasing authentic Kenyan experiences — from unforgettable safaris in the Maasai Mara to pristine beaches of Diani and vibrant cultural experiences in Nairobi. The platform features tour packages, gallery, booking system, and expert local guide profiles.",
         image: "/images/savannahtrails.webp",
         tags: ["Tourism", "Travel", "Safari", "Booking"],
-        link: "https://savannahtrails.netlify.app"
+        link: "https://savannahtrails.vercel.app"
     },
     {
         title: "CareerWiz",
